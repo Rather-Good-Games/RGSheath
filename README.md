@@ -59,7 +59,7 @@ Enable on GameInstance:
 ![RGSheath](media/GameInstanceRGSheath.png)
 
 
-Create equipment containers to hold sheithed weapons and sheathed models. i.e. scabard can be added to back or hips when sheathed.
+Create equipment containers to hold sheathed weapons and sheathed models. i.e. scabard can be added to back or hips when sheathed.
 
 ![RGSheath](media/PCMEquipmetcontainers.png)
 
