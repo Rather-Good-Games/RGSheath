@@ -1,22 +1,18 @@
 
+New version PlayableCharacter model only
 
 
-In namespace MultiplayerARPG
-In CharacterAnimation.cs
-    public partial struct WeaponAnimations : IWeaponAnims
+Make partial:
+public partial class PlayableCharacterModel : BaseCharacterModel
 
 
-namespace MultiplayerARPG.GameData.Model.Playables
-In PlayableCharacterAnimation.cs
-    public partial struct WeaponAnimations : IWeaponAnims
+Make partial:
+ public partial struct WeaponAnimations : IWeaponAnims
 
 
-  public partial struct EquipmentModel
-Need?
-
-in public partial class AnimatorCharacterModel : BaseRemakeCharacterModel
-init AnimatorCharacterModel,  "protected void SetupComponent()"
-
+ in BaseCharacterModel
+//protected readonly Dictionary<string, Dictionary<string, GameObject>> cacheModels = new Dictionary<string, Dictionary<string, GameObject>>();
+DestroyCacheModel(equipPosition); //set "protected void DestroyCacheModel(string equipPosition)"
 
 
 
