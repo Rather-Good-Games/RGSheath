@@ -10,10 +10,10 @@ namespace MultiplayerARPG
     {
 
         [Header("Rather Good Sheath")]
-        [Tooltip("Enable Emotes. Removes update and chat checks if false.")]
+        [Tooltip("Enable sheathing.")]
         public bool enableRatherGoodSheath = true;
 
-        public bool disablePitchIKWhenSheithed = true;
+        public bool disablePitchIKWhenSheathed = true;
 
         public string sheathButtonName = "Sheath";
 

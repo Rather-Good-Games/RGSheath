@@ -36,9 +36,9 @@ namespace MultiplayerARPG.GameData.Model.Playables
                 if (TryGetWeaponAnimations(rightHandWeaponItem.WeaponType.DataId, out shiethAnimations))
                 {
                     if (isSheathed)
-                        actionAnimationToPlay = shiethAnimations.dualWeildSheithAnimations;
+                        actionAnimationToPlay = shiethAnimations.dualWeildSheathAnimations;
                     else
-                        actionAnimationToPlay = shiethAnimations.dualWeildUnSheithAnimations;
+                        actionAnimationToPlay = shiethAnimations.dualWeildUnSheathAnimations;
 
                     hasClip = true;
                 }
@@ -48,9 +48,9 @@ namespace MultiplayerARPG.GameData.Model.Playables
                 if (TryGetWeaponAnimations(rightHandWeaponItem.WeaponType.DataId, out shiethAnimations))
                 {
                     if (isSheathed)
-                        actionAnimationToPlay = shiethAnimations.rightHandSheithAnimations;
+                        actionAnimationToPlay = shiethAnimations.rightHandSheathAnimations;
                     else
-                        actionAnimationToPlay = shiethAnimations.rightHandUnSheithAnimations;
+                        actionAnimationToPlay = shiethAnimations.rightHandUnSheathAnimations;
 
                     hasClip = true;
                 }
@@ -60,9 +60,9 @@ namespace MultiplayerARPG.GameData.Model.Playables
                 if (TryGetWeaponAnimations(leftHandWeaponItem.WeaponType.DataId, out shiethAnimations))
                 {
                     if (isSheathed)
-                        actionAnimationToPlay = shiethAnimations.leftHandSheithAnimations;
+                        actionAnimationToPlay = shiethAnimations.leftHandSheathAnimations;
                     else
-                        actionAnimationToPlay = shiethAnimations.leftHandUnSheithAnimations;
+                        actionAnimationToPlay = shiethAnimations.leftHandUnSheathAnimations;
 
                     hasClip = true;
                 }
@@ -128,11 +128,11 @@ namespace MultiplayerARPG.GameData.Model.Playables
             else
             {
                 if (rightHandItem != null && rightHandItem.IsWeapon())
-                    InstantiateEquipModel2(GameDataConst.EQUIP_POSITION_RIGHT_HAND, rightHandItem.DataId, equipWeapons.rightHand.level, (rightHandItem as IWeaponItem).RightHandSheithEquipmentModels, out rightHandEquipmentEntity);
+                    InstantiateEquipModel2(GameDataConst.EQUIP_POSITION_RIGHT_HAND, rightHandItem.DataId, equipWeapons.rightHand.level, (rightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
                 if (leftHandItem != null && leftHandItem.IsWeapon())
-                    InstantiateEquipModel2(GameDataConst.EQUIP_POSITION_LEFT_HAND, leftHandItem.DataId, equipWeapons.leftHand.level, (leftHandItem as IWeaponItem).LeftHandSheithEquipmentModels, out leftHandEquipmentEntity);
+                    InstantiateEquipModel2(GameDataConst.EQUIP_POSITION_LEFT_HAND, leftHandItem.DataId, equipWeapons.leftHand.level, (leftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
                 if (leftHandItem != null && leftHandItem.IsShield())
-                    InstantiateEquipModel2(GameDataConst.EQUIP_POSITION_LEFT_HAND, leftHandItem.DataId, equipWeapons.leftHand.level, (leftHandItem as IWeaponItem).LeftHandSheithEquipmentModels, out leftHandEquipmentEntity);
+                    InstantiateEquipModel2(GameDataConst.EQUIP_POSITION_LEFT_HAND, leftHandItem.DataId, equipWeapons.leftHand.level, (leftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
                 //TODO Shield is not iWeaponItem (yet?)
             }
 

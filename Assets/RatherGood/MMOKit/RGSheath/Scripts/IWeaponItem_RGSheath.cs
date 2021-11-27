@@ -5,9 +5,9 @@ namespace MultiplayerARPG
     public partial interface IWeaponItem : IEquipmentItem
     {
 
-        EquipmentModel[] RightHandSheithEquipmentModels { get; }
+        EquipmentModel[] RightHandSheathEquipmentModels { get; }
 
-        EquipmentModel[] LeftHandSheithEquipmentModels { get; }
+        EquipmentModel[] LeftHandSheathEquipmentModels { get; }
 
     }
 }

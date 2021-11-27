@@ -10,24 +10,24 @@ namespace MultiplayerARPG
     {
 
 
-        [Header("Right hand sheith models")]
-        [Category(100, "RG SHEITH")]
+        [Header("Right hand sheath models")]
+        [Category(100, "RG SHEATH")]
         [SerializeField]
-        private EquipmentModel[] rightHandSheithEquipmentModels;
-        public EquipmentModel[] RightHandSheithEquipmentModels
+        private EquipmentModel[] rightHandSheathEquipmentModels;
+        public EquipmentModel[] RightHandSheathEquipmentModels
         {
-            get { return rightHandSheithEquipmentModels; }
-            set { rightHandSheithEquipmentModels = value; }
+            get { return rightHandSheathEquipmentModels; }
+            set { rightHandSheathEquipmentModels = value; }
         }
 
 
-        [Tooltip("Left Hand Sheith models. Also Shield")]
-        public EquipmentModel[] leftHandSheithEquipmentModels;
+        [Tooltip("Left Hand Sheath models. Also Shield")]
+        public EquipmentModel[] leftHandSheathEquipmentModels;
 
-        public EquipmentModel[] LeftHandSheithEquipmentModels
+        public EquipmentModel[] LeftHandSheathEquipmentModels
         {
-            get { return leftHandSheithEquipmentModels; }
-            set { leftHandSheithEquipmentModels = value; }
+            get { return leftHandSheathEquipmentModels; }
+            set { leftHandSheathEquipmentModels = value; }
         }
 
 

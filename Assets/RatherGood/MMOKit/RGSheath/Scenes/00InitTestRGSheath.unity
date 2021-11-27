@@ -721,7 +721,7 @@ MonoBehaviour:
   enableRatherGoodEmotes: 1
   emoteData: {fileID: 0}
   enableRatherGoodSheath: 1
-  disablePitchIKWhenSheithed: 1
+  disablePitchIKWhenSheathed: 1
   sheathButtonName: Sheath
   dimensionType: 0
   saveSystem: {fileID: 0}
@@ -733,6 +733,8 @@ MonoBehaviour:
     type: 3}
   warpPortalEntityPrefab: {fileID: 114731892942428866, guid: 5773ff22c96e3ab4bb12d8202ec86244,
     type: 3}
+  playerCorpsePrefab: {fileID: 0}
+  monsterCorpsePrefab: {fileID: 0}
   uiSceneGameplayPrefab: {fileID: 114088817493988554, guid: 4af36d4bdf0cf07409f4412130b793ec,
     type: 3}
   uiSceneGameplayMobilePrefab: {fileID: 114630585920460692, guid: 70474cf4f9f686c45b0305621722205f,
@@ -766,7 +768,7 @@ MonoBehaviour:
   muteEffects: []
   freezeEffects: []
   expTree: 140000001e00000031000000490000006500000086000000aa000000d1000000fa000000270100005601000087010000bb010000f10100002902000064020000a0020000de0200001e0300005f030000a3030000e80300002f04000077040000c10400000d0500005a050000a9050000f90500004a0600009d060000f1060000470700009e070000f707000050080000ab0800000809000065090000c4090000240a0000850a0000e80a00004b0b0000b00b0000160c00007d0c0000e50c00004e0d0000b90d0000240e0000910e0000fe0e00006d0f0000dd0f00004d100000bf10000032110000a61100001b12000090120000071300007f130000f813000071140000ec14000068150000e415000062160000e01600005f170000e017000061180000e318000066190000ea1900006e1a0000f41a00007a1b0000021c00008a1c0000131d00009d1d0000281e0000b31e0000401f0000cd1f00005b200000ea200000792100000a2200009b2200002d230000c023000054240000e82400007e25000014260000aa26000042270000
-  gameDatabase: {fileID: 11400000, guid: 78362f3a31c322e4396aa7f42ea58f99, type: 2}
+  gameDatabase: {fileID: 11400000, guid: a54ffd42ae7fb3241b3299b349b9737f, type: 2}
   npcDatabase: {fileID: 11400000, guid: dae14f7f7d125fc4096ba7ac1f68d581, type: 2}
   warpPortalDatabase: {fileID: 11400000, guid: 6a5e8bb8645bbb349a05709f9b37b5df, type: 2}
   socialSystemSetting: {fileID: 11400000, guid: afad462dae207414f91b207f6882dad2,
@@ -808,6 +810,14 @@ MonoBehaviour:
   combatTextDistance: 20
   maxEquipWeaponSet: 2
   currentPositionSaveMode: 0
+  playerDropItemMode: 0
+  playerDeadDropItemMode: 0
+  playerCorpseAppearDuration: 60
+  monsterDeadDropItemMode: 0
+  monsterCorpseAppearDuration: 60
+  returnMoveSpeedDelayAfterAction: 0.1
+  mountDelay: 1
+  useItemDelay: 0.25
   dismantleFilter:
     includeJunk: 0
     includeArmor: 1
@@ -2094,3 +2104,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a337e47669c9e46b404eafabe7ba0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2498675901067073650
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 987923199813240446, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_Name
+      value: Male_CC_SheathMod
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813244749, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 987923199813254391, guid: 0977849ba048b2347ab5bf0e344dcfe6,
+        type: 3}
+      propertyPath: objectId
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0977849ba048b2347ab5bf0e344dcfe6, type: 3}

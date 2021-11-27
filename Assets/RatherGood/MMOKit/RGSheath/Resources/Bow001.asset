@@ -30,16 +30,17 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 34342a09346349345a4313fd6e7657e1, type: 2}
     amount: 4
   cashShopItemGeneratingList: []
-  rightHandSheithEquipmentModels:
+  rightHandSheathEquipmentModels:
   - equipSocket: Back_Attachment
     useInstantiatedObject: 0
     model: {fileID: 1000012646206576, guid: 8dd10cc0cbafc994e92ae2af479492bf, type: 3}
     instantiatedObjectIndex: 0
-    localPosition: {x: -0.086, y: -0.002, z: 0.033}
-    localEulerAngles: {x: 85.8176, y: 172.00546, z: 172.12015}
+    localPosition: {x: -0.068, y: -0.024, z: 0.009}
+    localEulerAngles: {x: 280.17142, y: 0.070910774, z: 359.7735}
     localScale: {x: 1, y: 1, z: 1}
-  leftHandSheithEquipmentModels: []
+  leftHandSheathEquipmentModels: []
   itemType: 2
+  useItemCooldown: 0
   equipmentModels:
   - equipSocket: WeaponL
     useInstantiatedObject: 0

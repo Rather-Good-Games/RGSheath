@@ -10,23 +10,23 @@ namespace MultiplayerARPG
 
     public partial class Item
     {
-        [Header("Right hand sheith models")]
-        [Category(100, "RG SHEITH")]
+        [Header("Right hand sheath models")]
+        [Category(100, "RG SHEATH")]
 
-        //[Header("Right hand sheith models")]
-        public EquipmentModel[] rightHandSheithEquipmentModels;
+        //[Header("Right hand sheath models")]
+        public EquipmentModel[] rightHandSheathEquipmentModels;
 
-        public EquipmentModel[] RightHandSheithEquipmentModels
+        public EquipmentModel[] RightHandSheathEquipmentModels
         {
-            get { return rightHandSheithEquipmentModels; }
+            get { return rightHandSheathEquipmentModels; }
         }
 
-        [Tooltip("Left Hand Sheith models. Also Shield")]
-        public EquipmentModel[] leftHandSheithEquipmentModels;
+        [Tooltip("Left Hand Sheath models. Also Shield")]
+        public EquipmentModel[] leftHandSheathEquipmentModels;
 
-        public EquipmentModel[] LeftHandSheithEquipmentModels
+        public EquipmentModel[] LeftHandSheathEquipmentModels
         {
-            get { return leftHandSheithEquipmentModels; }
+            get { return leftHandSheathEquipmentModels; }
         }
 
 

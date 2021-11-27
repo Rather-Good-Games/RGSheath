@@ -7,14 +7,14 @@ namespace MultiplayerARPG.GameData.Model.Playables
     {
         [Header("Sheith animations for weapons")]
 
-        public ActionAnimation rightHandSheithAnimations;
-        public ActionAnimation rightHandUnSheithAnimations;
+        public ActionAnimation rightHandSheathAnimations;
+        public ActionAnimation rightHandUnSheathAnimations;
 
-        public ActionAnimation leftHandSheithAnimations;
-        public ActionAnimation leftHandUnSheithAnimations;
+        public ActionAnimation leftHandSheathAnimations;
+        public ActionAnimation leftHandUnSheathAnimations;
 
-        public ActionAnimation dualWeildSheithAnimations;
-        public ActionAnimation dualWeildUnSheithAnimations;
+        public ActionAnimation dualWeildSheathAnimations;
+        public ActionAnimation dualWeildUnSheathAnimations;
 
     }
 

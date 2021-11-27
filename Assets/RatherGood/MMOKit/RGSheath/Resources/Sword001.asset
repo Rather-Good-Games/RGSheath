@@ -32,23 +32,24 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 5842068f5743c524c967a28b483477ed, type: 2}
     amount: 2
   cashShopItemGeneratingList: []
-  rightHandSheithEquipmentModels:
+  rightHandSheathEquipmentModels:
   - equipSocket: Back_Attachment
     useInstantiatedObject: 0
     model: {fileID: 1000010853050978, guid: a4d72b2e28dda4b46bda6b164b763764, type: 3}
     instantiatedObjectIndex: 0
-    localPosition: {x: 0.062, y: 0.0852, z: 0.0576}
-    localEulerAngles: {x: 53.734737, y: 266.58804, z: 264.54248}
+    localPosition: {x: 0.063, y: 0.076, z: 0.038}
+    localEulerAngles: {x: 62.249294, y: 264.76367, z: 261.44308}
     localScale: {x: 1, y: 1, z: 1}
-  leftHandSheithEquipmentModels:
+  leftHandSheathEquipmentModels:
   - equipSocket: Back_Attachment
     useInstantiatedObject: 0
     model: {fileID: 1000010853050978, guid: a4d72b2e28dda4b46bda6b164b763764, type: 3}
     instantiatedObjectIndex: 0
-    localPosition: {x: -0.062, y: 0.085, z: 0.051}
-    localEulerAngles: {x: 60.6332, y: 89.28561, z: 87.11796}
+    localPosition: {x: -0.049, y: 0.08, z: 0.033}
+    localEulerAngles: {x: 60.276955, y: 87.14319, z: 85.14952}
     localScale: {x: 1, y: 1, z: 1}
   itemType: 2
+  useItemCooldown: 0
   equipmentModels:
   - equipSocket: WeaponR
     useInstantiatedObject: 0

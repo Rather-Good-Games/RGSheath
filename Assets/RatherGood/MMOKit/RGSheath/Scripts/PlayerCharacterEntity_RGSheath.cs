@@ -176,7 +176,7 @@ namespace MultiplayerARPG
         private void OnIsSheathedChange(bool isInitial, bool isOpen)
         {
 
-            if (CurrentGameInstance.disablePitchIKWhenSheithed)
+            if (CurrentGameInstance.disablePitchIKWhenSheathed)
                 characterPitchIK.enabled = !isOpen;
 
             //UpdatePitchIKBasedOnWeaponDamageType();
