@@ -31,7 +31,24 @@ Example uses Exlosive "RPG Character Mecanim Animation Pack" not included.  http
 
 **Core MMORPG Kit modifications:**
 
-See code
+Make partial:
+```csharp 
+public partial class PlayableCharacterModel : BaseCharacterModel
+```
+
+Make partial:
+```csharp 
+ public partial struct WeaponAnimations : IWeaponAnims
+```
+
+in BaseCharacterModel
+```csharp 
+protected readonly Dictionary<string, Dictionary<string, GameObject>> cacheModels = new Dictionary<string, Dictionary<string, GameObject>>();
+```
+also
+```csharp 
+protected DestroyCacheModel(string equipPosition)
+```
 
 **Instructions for use:**
 
