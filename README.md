@@ -4,7 +4,7 @@ WORK IN PROGRESS
 
 **Demo Video**
 
-[![Emote Chat](media/RGSheathPic.png)](https://youtu.be/nWquP-_aa3U)
+[![RGSheath](media/RGSheathPic.png)](https://youtu.be/nWquP-_aa3U)
 
 **Author:** RatherGood1
 
@@ -37,9 +37,21 @@ See code
 
 TODO:
 
-Set new sheath/unsheath animations on PlayableCharacterModel component.
+Enable on GameInstance:
 
-Set Models for sheithed weapons.
+![RGSheath](media/GameInstanceRGSheath.png)
+
+
+Create equipment containers to hold sheithed weapons and sheathed models. i.e. scabard can be added to back or hips when sheathed.
+
+![RGSheath](media/PCMEquipmetcontainers.png)
+
+Add animations for sheathing/unsheathing weapons right/left or dual or whatever. ***NOTE: Trigger duration will apply at 0.5 * animation time if no "trigger duration rate" is supplied. Only looks at first value supplied in array. Alternaively ou can have weapons swap at specific time in animation by applying 0-1 value.***
+![RGSheath](media/PCMWeaponAnimations.png)
+
+Set the sheath models to the container and apply position/rotation offsets.  ***Set scale to 1,1,1*** it will default to 0,0,0
+![RGSheath](media/PCBBoo1_Item_RGSHEITHInfo.png)
+
 
 **Done.**
 
