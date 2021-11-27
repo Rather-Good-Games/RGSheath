@@ -1,0 +1,26 @@
+
+
+
+In namespace MultiplayerARPG
+In CharacterAnimation.cs
+    public partial struct WeaponAnimations : IWeaponAnims
+
+
+namespace MultiplayerARPG.GameData.Model.Playables
+In PlayableCharacterAnimation.cs
+    public partial struct WeaponAnimations : IWeaponAnims
+
+
+  public partial struct EquipmentModel
+Need?
+
+in public partial class AnimatorCharacterModel : BaseRemakeCharacterModel
+init AnimatorCharacterModel,  "protected void SetupComponent()"
+
+
+
+
+
+
+
+
