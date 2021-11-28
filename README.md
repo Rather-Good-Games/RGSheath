@@ -4,15 +4,16 @@ WORK IN PROGRESS
 
 **Demo Video**
 
-[![RGSheath](media/RGSheathPic.png)](https://youtu.be/nWquP-_aa3U)
+[![RGSheath](media/RGSheathPic.png)](https://youtu.be/BaNxLWO5S8A)
 
 **Author:** RatherGood1
 
-**Version**: 0.001
+**Version**: 0.002
 
-Broken version using PlayableCharacterModel 
+STILL Broken but much more interesting version using PlayableCharacterModel
 
-**Updated:** 26 Nov 21
+
+**Updated:** 28 Nov 21
 
 **Compatibility:** Tested on Suriyun MMORPG Kit Version 1.71f.
 
