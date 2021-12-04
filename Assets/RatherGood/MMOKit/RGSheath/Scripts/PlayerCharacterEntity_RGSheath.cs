@@ -8,22 +8,24 @@ using MultiplayerARPG.GameData.Model.Playables;
 namespace MultiplayerARPG
 {
 
-    [RequireComponent(typeof(PitchIKMgr_RGSheath))]
     //only works with PlayableCharacterModel
     public partial class PlayerCharacterEntity
     {
-
+        
+        //TODO: Fix Charge animation with 0 time
+        //TODO: Check multiplayer. need RPC call?
         [Category(5400, "RGSheath Stuff")]
         [SerializeField] protected SyncFieldBool isSheathed = new SyncFieldBool();
-
-        private PlayableCharacterModel_Custom playableCharacterModel_ForSheath;
-
-        PitchIKMgr_RGSheath pitchIKMgr_RGSheath;
         public bool IsSheathed
         {
             get { return isSheathed.Value; }
             set { isSheathed.SetValue(value); }
         }
+
+        private PlayableCharacterModel_Custom playableCharacterModel_ForSheath;
+
+        //If using PithIK mod (not required).
+        PitchIKMgr_RGSheath pitchIKMgr_RGSheath;
 
         [DevExtMethods("Awake")]
         protected void PlayerSheathAwake()
@@ -38,8 +40,7 @@ namespace MultiplayerARPG
 
         protected void PlayerSheathInit()
         {
-
-            //Need to init here not awake doesnt seem to register
+            //Need to init here and not awake doesn't register
             isSheathed.onChange += OnIsSheathedChange;
             onEquipWeaponSetChange += EquipWeaponSetChange;
         }
@@ -59,6 +60,13 @@ namespace MultiplayerARPG
             return !this.IsDead() && !IsReloading && !IsAttacking && !IsUsingSkill && !IsReloading && !IsPlayingActionAnimation();
         }
 
+        //Change CanAttack to virtual
+        public override bool CanAttack()
+        {
+            if (isSheathed)
+                return false;
+            return base.CanAttack();
+        }
         private void EquipWeaponSetChange(byte equipWeaponSet)
         {
             UpdatePlayerWeaponItems();
@@ -88,7 +96,9 @@ namespace MultiplayerARPG
         {
             playableCharacterModel_ForSheath.StartShiethProcess(IsSheathed);
 
-            pitchIKMgr_RGSheath.UpdatePitchIKBasedOnWeaponDamageType(IsSheathed);
+            //If using MMORPG PithIK and PitchIKMgr_RGSheath mod (not required)
+            if ((pitchIKMgr_RGSheath != null) && GameInstance.Singleton.disablePitchIKWhenSheathed)
+                pitchIKMgr_RGSheath.UpdatePitchIKBasedOnWeaponDamageType(IsSheathed);
 
         }
 

@@ -5,7 +5,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
     public partial struct WeaponAnimations : IWeaponAnims
     {
-        [Header("Sheith animations for weapons")]
+        [Header("Sheath animations for weapons")]
 
         public ActionAnimation rightHandSheathAnimations;
         public ActionAnimation rightHandUnSheathAnimations;

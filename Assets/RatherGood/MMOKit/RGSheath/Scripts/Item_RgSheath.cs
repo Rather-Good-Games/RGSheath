@@ -10,10 +10,10 @@ namespace MultiplayerARPG
 
     public partial class Item
     {
-        [Header("Right hand sheath models")]
+
         [Category(100, "RG SHEATH")]
 
-        //[Header("Right hand sheath models")]
+        [Header("Right hand sheath models")]
         public EquipmentModel[] rightHandSheathEquipmentModels;
 
         public EquipmentModel[] RightHandSheathEquipmentModels

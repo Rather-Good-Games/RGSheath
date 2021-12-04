@@ -4,16 +4,17 @@ using UnityEngine;
 
 namespace MultiplayerARPG
 {
-    //Create this partial to implement interface. However this class seems to be unused in kit
+    //TODO: Something else?
+    //Create this partial to implement interface. However, kit doesn't use WeaponItem but need this class to implement IWeaponInterface anyway.
 
     public partial class WeaponItem : BaseEquipmentItem, IWeaponItem
     {
 
+        [Category(100, "RG SHEATH")]
 
         [Header("Right hand sheath models")]
-        [Category(100, "RG SHEATH")]
-        [SerializeField]
-        private EquipmentModel[] rightHandSheathEquipmentModels;
+
+        [SerializeField] private EquipmentModel[] rightHandSheathEquipmentModels;
         public EquipmentModel[] RightHandSheathEquipmentModels
         {
             get { return rightHandSheathEquipmentModels; }
@@ -22,7 +23,7 @@ namespace MultiplayerARPG
 
 
         [Tooltip("Left Hand Sheath models. Also Shield")]
-        public EquipmentModel[] leftHandSheathEquipmentModels;
+        [SerializeField] private EquipmentModel[] leftHandSheathEquipmentModels;
 
         public EquipmentModel[] LeftHandSheathEquipmentModels
         {

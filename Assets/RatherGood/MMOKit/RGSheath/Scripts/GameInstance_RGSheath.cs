@@ -13,8 +13,10 @@ namespace MultiplayerARPG
         [Tooltip("Enable sheathing.")]
         public bool enableRatherGoodSheath = true;
 
+        [Tooltip("If using special PitchIKMgr_RGSheath.")]
         public bool disablePitchIKWhenSheathed = true;
 
+        [Tooltip("For hotkey assignment.")]
         public string sheathButtonName = "Sheath";
 
     }

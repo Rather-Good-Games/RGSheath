@@ -2,25 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
 
 namespace MultiplayerARPG
 {
+    //TODO: Better IK Ctrl. This doesn't do a good job of covering all variations
+    [RequireComponent(typeof(CharacterPitchIK))]
     public class PitchIKMgr_RGSheath : MonoBehaviour
     {
-        // Start is called before the first frame update
 
         CharacterPitchIK characterPitchIK;
 
         [SerializeField] DamageType rightHandDamageType;
         [SerializeField] DamageType leftHandDamageType;
 
+        [Tooltip("PItch IK settings when sheathed")]
         [SerializeField] pitchAdjustSettings defaultPitchAdjustSettings;
 
+        [Tooltip("PItch IK settings when using mele type weapon")]
         [SerializeField] pitchAdjustSettings meleePitchAdjustSettings;
 
+        [Tooltip("PItch IK settings when using missile type weapon")]
         [SerializeField] pitchAdjustSettings missilePitchAdjustSettings;
 
+        //TODO: Others if needed
         private void Awake()
         {
             characterPitchIK = GetComponent<CharacterPitchIK>();
@@ -29,8 +33,6 @@ namespace MultiplayerARPG
 
         public void UpdatePitchIKBasedOnWeaponDamageType(bool isSheathed)
         {
-            if (!GameInstance.Singleton.disablePitchIKWhenSheathed)
-                return;
 
             EquipWeapons equipWeapons = GameInstance.PlayingCharacterEntity?.EquipWeapons;
 
@@ -65,7 +67,8 @@ namespace MultiplayerARPG
                 damageTypeSwitch = leftHandDamageType;
             else
             {
-                //set defaults
+                //TODO: Something better
+                //defaults = DamageType.Melee
             }
 
             pitchAdjustSettings set = defaultPitchAdjustSettings;
