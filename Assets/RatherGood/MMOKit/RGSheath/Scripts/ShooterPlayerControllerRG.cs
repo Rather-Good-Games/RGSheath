@@ -14,26 +14,15 @@ namespace MultiplayerARPG
 
         protected override void Update()
         {
-
-            
-
             if (switchControllerModeWhenSheathed && CurrentGameInstance.enableRatherGoodSheath)
             {
-
-                PlayerCharacterEntity pce = PlayerCharacterEntity as PlayerCharacterEntity;
-
-                if (pce.IsSheathed)
+                if (PlayerCharacterEntity.IsSheathed)
                     mode = ControllerMode.Adventure;
                 else
                     mode = ControllerMode.Combat;
             }
 
-
             base.Update();
-
         }
-
-
-
     }
 }
