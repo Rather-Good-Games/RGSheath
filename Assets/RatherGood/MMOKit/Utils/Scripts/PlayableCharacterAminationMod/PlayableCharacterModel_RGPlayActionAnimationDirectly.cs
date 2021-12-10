@@ -11,7 +11,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
     /// <summary>
     /// Core mod requires adding 'partial' modifier to 'PlayableCharacterModel'
     /// </summary>
-    public partial class PlayableCharacterModel
+    public partial class PlayableCharacterModel_Custom
     {
 
         public Coroutine PlayActionAnimationDirectly(MultiplayerARPG.ActionAnimation actionAnimation, AvatarMask avatarMask)

@@ -11,16 +11,6 @@ namespace MultiplayerARPG
     //only works with PlayableCharacterModel
     public partial class PlayerCharacterEntity
     {
-        
-        //TODO: Fix Charge animation with 0 time
-        //TODO: Check multiplayer. need RPC call?
-        [Category(5400, "RGSheath Stuff")]
-        [SerializeField] protected SyncFieldBool isSheathed = new SyncFieldBool();
-        public bool IsSheathed
-        {
-            get { return isSheathed.Value; }
-            set { isSheathed.SetValue(value); }
-        }
 
         private PlayableCharacterModel_Custom playableCharacterModel_ForSheath;
 
@@ -31,9 +21,8 @@ namespace MultiplayerARPG
         protected void PlayerSheathAwake()
         {
             playableCharacterModel_ForSheath = GetComponent<PlayableCharacterModel_Custom>();
-
             pitchIKMgr_RGSheath = GetComponent<PitchIKMgr_RGSheath>();
-
+            IsSheathed = GameInstance.Singleton.enableCharacterSelectSheath;
             onStart += PlayerSheathInit;
             onUpdate += PlayerSheathOnUpdate;
         }
@@ -41,7 +30,7 @@ namespace MultiplayerARPG
         protected void PlayerSheathInit()
         {
             //Need to init here and not awake doesn't register
-            isSheathed.onChange += OnIsSheathedChange;
+            onSheathChange += StartShiethProcess;
             onEquipWeaponSetChange += EquipWeaponSetChange;
         }
 
@@ -52,29 +41,17 @@ namespace MultiplayerARPG
             onStart -= PlayerSheathInit;
             onUpdate -= PlayerSheathOnUpdate;
             onEquipWeaponSetChange -= EquipWeaponSetChange;
-            isSheathed.onChange -= OnIsSheathedChange;
+            onSheathChange -= StartShiethProcess;
         }
 
         public override bool CanDoActions()
         {
-            return !this.IsDead() && !IsReloading && !IsAttacking && !IsUsingSkill && !IsReloading && !IsPlayingActionAnimation();
+            return !this.IsDead() && !isSheathed && !IsReloading && !IsAttacking && !IsUsingSkill && !IsReloading && !IsPlayingActionAnimation();
         }
 
-        //Change CanAttack to virtual
-        public override bool CanAttack()
-        {
-            if (isSheathed)
-                return false;
-            return base.CanAttack();
-        }
         private void EquipWeaponSetChange(byte equipWeaponSet)
         {
-            UpdatePlayerWeaponItems();
-        }
-
-        void UpdatePlayerWeaponItems()
-        {
-            StartShiethProcess();
+            StartShiethProcess(isSheathed.Value);
         }
 
         protected void PlayerSheathOnUpdate()
@@ -84,21 +61,17 @@ namespace MultiplayerARPG
 
             if (InputManager.GetButtonDown(CurrentGameInstance.sheathButtonName))
             {
-                IsSheathed = !IsSheathed;
+                this.CallServerSheathWeapon();
             }
         }
 
-        private void OnIsSheathedChange(bool isInitial, bool isOpen)
+        void StartShiethProcess(bool isOpen)
         {
-            StartShiethProcess();
-        }
-        void StartShiethProcess()
-        {
-            playableCharacterModel_ForSheath.StartShiethProcess(IsSheathed);
+            playableCharacterModel_ForSheath.StartShiethProcess(isOpen);
 
             //If using MMORPG PithIK and PitchIKMgr_RGSheath mod (not required)
             if ((pitchIKMgr_RGSheath != null) && GameInstance.Singleton.disablePitchIKWhenSheathed)
-                pitchIKMgr_RGSheath.UpdatePitchIKBasedOnWeaponDamageType(IsSheathed);
+                pitchIKMgr_RGSheath.UpdatePitchIKBasedOnWeaponDamageType(isOpen);
 
         }
 

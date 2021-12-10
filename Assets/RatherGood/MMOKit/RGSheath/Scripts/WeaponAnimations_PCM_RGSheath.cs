@@ -1,10 +1,13 @@
+using MultiplayerARPG;
 using UnityEngine;
 
 namespace MultiplayerARPG.GameData.Model.Playables
-{
-
-    public partial struct WeaponAnimations : IWeaponAnims
+{ 
+    [System.Serializable]
+    public struct SheathAnimations : ISheathAnims
     {
+        public WeaponType SheathweaponType;
+
         [Header("Sheath animations for weapons")]
 
         public ActionAnimation rightHandSheathAnimations;
@@ -16,7 +19,8 @@ namespace MultiplayerARPG.GameData.Model.Playables
         public ActionAnimation dualWeildSheathAnimations;
         public ActionAnimation dualWeildUnSheathAnimations;
 
+        public WeaponType Data { get { return SheathweaponType; } }
+
+
     }
-
-
 }
