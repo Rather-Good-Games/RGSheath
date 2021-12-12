@@ -6,11 +6,13 @@ And Special thanks to https://github.com/Callepo aka Callepo[AlphaAF] for update
 
 **Author:** RatherGood1
 
-**Version**: 0.11
+**Version**: 0.12
 
 This is a working functional demo. Check back often for further change/improvements.
 
-**Updated:** 11 Dec 21
+Fixes some issues with second weapon set not displayign properly
+
+**Updated:** 12 Dec 21
 
 **Compatibility:** Tested on Suriyun MMORPG Kit Version 1.72c4 and Unity 2021.1.23f
 

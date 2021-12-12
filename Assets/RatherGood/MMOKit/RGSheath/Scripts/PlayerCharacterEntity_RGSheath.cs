@@ -14,8 +14,8 @@ namespace MultiplayerARPG
 
         private PlayableCharacterModel_Custom playableCharacterModel_ForSheath;
 
-        //If using PithIK mod (not required).
-        PitchIKMgr_RGSheath pitchIKMgr_RGSheath;
+
+        PitchIKMgr_RGSheath pitchIKMgr_RGSheath; //If using PithIK mod (not required).
 
         [DevExtMethods("Awake")]
         protected void PlayerSheathAwake()
@@ -31,7 +31,6 @@ namespace MultiplayerARPG
         {
             //Need to init here and not awake doesn't register
             onSheathChange += StartShiethProcess;
-            onEquipWeaponSetChange += EquipWeaponSetChange;
         }
 
 
@@ -40,7 +39,6 @@ namespace MultiplayerARPG
         {
             onStart -= PlayerSheathInit;
             onUpdate -= PlayerSheathOnUpdate;
-            onEquipWeaponSetChange -= EquipWeaponSetChange;
             onSheathChange -= StartShiethProcess;
         }
         public override bool CanAttack()
@@ -49,10 +47,7 @@ namespace MultiplayerARPG
                 return false;
             return base.CanAttack();
         }
-        private void EquipWeaponSetChange(byte equipWeaponSet)
-        {
-            StartShiethProcess(isSheathed.Value);
-        }
+
 
         protected void PlayerSheathOnUpdate()
         {
@@ -65,16 +60,54 @@ namespace MultiplayerARPG
             }
         }
 
+
+        /// <summary>
+        /// Sheath process does not need to trigger weapon change.
+        /// </summary>
+        /// <param name="isOpen"></param>
         void StartShiethProcess(bool isOpen)
         {
-            playableCharacterModel_ForSheath.StartShiethProcess(isOpen);
+            playableCharacterModel_ForSheath.StartShiethProcess(isOpen); //null equipWeaponSet will only sheith/unsheath current weapons
+
+            if ((pitchIKMgr_RGSheath != null) && GameInstance.Singleton.disablePitchIKWhenSheathed)
+                pitchIKMgr_RGSheath.UpdatePitchIKBasedOnWeaponDamageType(isSheathed);
+
+        }
+
+
+        protected override void OnEquipWeaponSetChange(bool isInitial, byte equipWeaponSet)
+        {
+
+            if (CurrentGameInstance.enableRatherGoodSheath)
+                StartCoroutine(WeaponSheathOrChangeProcess(isInitial, equipWeaponSet));
+            else
+                base.OnEquipWeaponSetChange(isInitial, equipWeaponSet);
+
+        }
+
+        private IEnumerator WeaponSheathOrChangeProcess(bool isInitial, byte equipWeaponSet)
+        {
+            EquipWeapons newEquipWeapons = SelectableWeaponSets[equipWeaponSet];
+
+            playableCharacterModel_ForSheath.StartShiethProcess(isSheathed, newEquipWeapons);
+
+            while (playableCharacterModel_ForSheath.weaponChangeInProcess)
+            {
+                yield return null;
+            }
+
+            //this will trigger the OnEquipWeaponSetChange event after swap for toher listenera
+            base.OnEquipWeaponSetChange(isInitial, equipWeaponSet);
 
             //If using MMORPG PithIK and PitchIKMgr_RGSheath mod (not required)
             if ((pitchIKMgr_RGSheath != null) && GameInstance.Singleton.disablePitchIKWhenSheathed)
-                pitchIKMgr_RGSheath.UpdatePitchIKBasedOnWeaponDamageType(isOpen);
+                pitchIKMgr_RGSheath.UpdatePitchIKBasedOnWeaponDamageType(isSheathed);
 
         }
 
     }
 }
+
+
+
 

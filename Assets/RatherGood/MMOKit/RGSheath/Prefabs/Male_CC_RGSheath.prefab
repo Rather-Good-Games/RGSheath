@@ -9693,7 +9693,8 @@ MonoBehaviour:
         isAdditive: 0
         applyFootIk: 0
         applyPlayableIk: 0
-      triggerDurationRates: []
+      triggerDurationRates:
+      - 0.556
       durationType: 0
       fixedDuration: 0
       extendDuration: 0
@@ -9707,7 +9708,8 @@ MonoBehaviour:
         isAdditive: 0
         applyFootIk: 0
         applyPlayableIk: 0
-      triggerDurationRates: []
+      triggerDurationRates:
+      - 0.644
       durationType: 0
       fixedDuration: 0
       extendDuration: 0
@@ -10108,6 +10110,7 @@ MonoBehaviour:
       fixedDuration: 0
       extendDuration: 0
       audioClips: []
+  weaponChangeInProcess: 0
 --- !u!114 &1630161034
 MonoBehaviour:
   m_ObjectHideFlags: 0

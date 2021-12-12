@@ -41,7 +41,7 @@ MonoBehaviour:
     localEulerAngles: {x: 2.8, y: -31.79, z: -21.6}
     localScale: {x: 1, y: 1, z: 1}
   leftHandSheathEquipmentModels:
-  - equipSocket: Back_Attachment2
+  - equipSocket: Back_Attachment
     useInstantiatedObject: 0
     model: {fileID: 1000010853050978, guid: a4d72b2e28dda4b46bda6b164b763764, type: 3}
     instantiatedObjectIndex: 0

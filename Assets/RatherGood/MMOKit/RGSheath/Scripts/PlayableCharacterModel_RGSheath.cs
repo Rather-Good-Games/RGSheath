@@ -10,15 +10,21 @@ namespace MultiplayerARPG.GameData.Model.Playables
         [ArrayElementTitle("SheathweaponType")]
         public SheathAnimations[] SheathAnimations;
 
-        public void StartShiethProcess(bool isSheathed)
+        public void StartShiethProcess(bool isSheathed, EquipWeapons newEquipWeapons = null)
         {
-            StartCoroutine(ShiethProcess(isSheathed));
+            weaponChangeInProcess = true;
+
+            //Only sheathing not changing
+            if (newEquipWeapons == null)
+                newEquipWeapons = equipWeapons;
+            StartCoroutine(ShiethProcess(isSheathed, newEquipWeapons));
         }
 
+        public bool weaponChangeInProcess = false;
 
         //TODO: When changing weapons, put old away before switching to new ones.
         //TODO: Hide/move models between sheath/un-sheath instead of a full destroy, rebuild and re-create
-        IEnumerator ShiethProcess(bool isSheathed)
+        IEnumerator ShiethProcess(bool isSheathed, EquipWeapons newEquipWeapons)
         {
 
             SheathAnimations shiethAnimations;
@@ -26,10 +32,10 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
             bool hasClip = false;
 
-            if ((equipWeapons.GetRightHandWeaponItem() != null) && (equipWeapons.GetLeftHandWeaponItem() != null))
+            if ((newEquipWeapons.GetRightHandWeaponItem() != null) && (newEquipWeapons.GetLeftHandWeaponItem() != null))
             {
 
-                if (TryGetWeaponAnimationsCustom(equipWeapons.GetRightHandWeaponItem().WeaponType.DataId, out shiethAnimations))
+                if (TryGetWeaponAnimationsCustom(newEquipWeapons.GetRightHandWeaponItem().WeaponType.DataId, out shiethAnimations))
                 {
                     if (isSheathed)
                         actionAnimationToPlay = shiethAnimations.dualWeildSheathAnimations;
@@ -39,9 +45,9 @@ namespace MultiplayerARPG.GameData.Model.Playables
                     hasClip = true;
                 }
             }
-            else if (equipWeapons.GetRightHandWeaponItem() != null)
+            else if (newEquipWeapons.GetRightHandWeaponItem() != null)
             {
-                if (TryGetWeaponAnimationsCustom(equipWeapons.GetRightHandWeaponItem().WeaponType.DataId, out shiethAnimations))
+                if (TryGetWeaponAnimationsCustom(newEquipWeapons.GetRightHandWeaponItem().WeaponType.DataId, out shiethAnimations))
                 {
                     if (isSheathed)
                         actionAnimationToPlay = shiethAnimations.rightHandSheathAnimations;
@@ -51,9 +57,9 @@ namespace MultiplayerARPG.GameData.Model.Playables
                     hasClip = true;
                 }
             }
-            else if (equipWeapons.GetLeftHandWeaponItem() != null)
+            else if (newEquipWeapons.GetLeftHandWeaponItem() != null)
             {
-                if (TryGetWeaponAnimationsCustom(equipWeapons.GetLeftHandWeaponItem().WeaponType.DataId, out shiethAnimations))
+                if (TryGetWeaponAnimationsCustom(newEquipWeapons.GetLeftHandWeaponItem().WeaponType.DataId, out shiethAnimations))
                 {
                     if (isSheathed)
                         actionAnimationToPlay = shiethAnimations.leftHandSheathAnimations;
@@ -72,15 +78,20 @@ namespace MultiplayerARPG.GameData.Model.Playables
             }
 
             //Switch to new weapons after duration 
-            SetEquipWeapons(equipWeapons);
+
+            InstantiateEquipModel3("HiddenWeaponRight");
+            InstantiateEquipModel3("HiddenWeaponLeft");
+            SetEquipWeapons(newEquipWeapons);
+
+            weaponChangeInProcess = false;
 
         }
 
         //Replaces: public override void SetEquipWeapons(EquipWeapons equipWeapons) in PlayableCharacterModel 
-        public override void SetEquipWeapons(EquipWeapons equipWeapons)
+        public override void SetEquipWeapons(EquipWeapons newEquipWeapons)
         {
 
-            base.SetEquipWeapons(equipWeapons);
+            base.SetEquipWeapons(newEquipWeapons);
 
             IEquipmentItem rightHandItem = equipWeapons.GetRightHandEquipmentItem();
             IEquipmentItem leftHandItem = equipWeapons.GetLeftHandEquipmentItem();
@@ -126,7 +137,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
                 EquipWeapons equipWeaponsHidden;
 
                 if (this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets.Count == 2)
-                    if (this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets.IndexOf(equipWeapons) == 0)
+                    if (this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets.IndexOf(newEquipWeapons) == 0)
                     {
                         hiddenRightHandItem = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[1].GetRightHandEquipmentItem();
                         hiddenLeftHandItem = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[1].GetLeftHandEquipmentItem();
@@ -134,18 +145,12 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
                         if (hiddenRightHandItem != null && hiddenRightHandItem.IsWeapon())
                             InstantiateEquipModel3("HiddenWeaponRight", hiddenRightHandItem.DataId, equipWeaponsHidden.rightHand.level, (hiddenRightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
-                        else
-                            InstantiateEquipModel3("HiddenWeaponRight");
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsWeapon())
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
-                        else
-                            InstantiateEquipModel3("HiddenWeaponLeft");
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsShield())
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
-                        else
-                            InstantiateEquipModel3("HiddenWeaponLeft");
                     }
-                    else if (this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets.IndexOf(equipWeapons) == 1)
+                    else if (this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets.IndexOf(newEquipWeapons) == 1)
                     {
                         hiddenRightHandItem = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[0].GetRightHandEquipmentItem();
                         hiddenLeftHandItem = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[0].GetLeftHandEquipmentItem();
@@ -153,17 +158,13 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
                         if (hiddenRightHandItem != null && hiddenRightHandItem.IsWeapon())
                             InstantiateEquipModel3("HiddenWeaponRight", hiddenRightHandItem.DataId, equipWeaponsHidden.rightHand.level, (hiddenRightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
-                        else
-                            InstantiateEquipModel3("HiddenWeaponRight");
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsWeapon())
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
-                        else
-                            InstantiateEquipModel3("HiddenWeaponLeft");
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsShield())
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
-                        else
-                            InstantiateEquipModel3("HiddenWeaponLeft");
+
                     }
+
             }
         }
 
