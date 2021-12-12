@@ -16,8 +16,8 @@ namespace MultiplayerARPG.GameData.Model.Playables
         }
 
 
-        //TODO: When changing weapons for put old away before switching to new ones.
-        //TODO: Hide/move models between sheath/un-sheath instead of a full rebuild destroy and re-create
+        //TODO: When changing weapons, put old away before switching to new ones.
+        //TODO: Hide/move models between sheath/un-sheath instead of a full destroy, rebuild and re-create
         IEnumerator ShiethProcess(bool isSheathed)
         {
 
@@ -63,8 +63,6 @@ namespace MultiplayerARPG.GameData.Model.Playables
                     hasClip = true;
                 }
             }
-
-
             if (hasClip && (actionAnimationToPlay.state.clip != null))
             {
                 PlayActionAnimationDirectly(actionAnimationToPlay);
@@ -96,10 +94,8 @@ namespace MultiplayerARPG.GameData.Model.Playables
                     InstantiateEquipModel3(GameDataConst.EQUIP_POSITION_LEFT_HAND, leftHandItem.DataId, equipWeapons.leftHand.level, (leftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
                 if (leftHandItem != null && leftHandItem.IsShield())
                     InstantiateEquipModel3(GameDataConst.EQUIP_POSITION_LEFT_HAND, leftHandItem.DataId, equipWeapons.leftHand.level, (leftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
-                //HACK, TODO: 
-                Behaviour.SetPlayingWeaponTypeId(null);  //Use defaults?
-                //Behaviour.currentWeaponTypeId = weaponAnimations[0].weaponType.Id;
 
+                Behaviour.SetPlayingWeaponTypeId(null);  //Use defaults
                 equippedWeaponType = null;
             }
             else
@@ -169,8 +165,6 @@ namespace MultiplayerARPG.GameData.Model.Playables
                             InstantiateEquipModel3("HiddenWeaponLeft");
                     }
             }
-
-
         }
 
         public bool TryGetWeaponAnimationsCustom(int dataId, out SheathAnimations anims)
@@ -189,7 +183,6 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
         public void InstantiateEquipModel3(string equipPosition, int itemDataId, int itemLevel, EquipmentModel[] equipmentModels, out BaseEquipmentEntity foundEquipmentEntity)
         {
-            //InstantiateEquipModel(equipPosition, itemDataId, itemLevel, equipmentModels, out foundEquipmentEntity);
 
             foundEquipmentEntity = null;
 

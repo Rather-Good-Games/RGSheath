@@ -44,7 +44,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0df782e70d43dc54d8a6bc2d6a212f89, type: 2}
   - {fileID: 11400000, guid: 77e595407b0920e47b26996f042b758d, type: 2}
   - {fileID: 11400000, guid: 4896d19f8423d0a4d9d8a4c055531694, type: 2}
-  - {fileID: 11400000, guid: 99ce6353c3a0b344bb452d0b2035feed, type: 2}
+  - {fileID: 11400000, guid: 0963afdd208056344a1ea27c592e1d03, type: 2}
   - {fileID: 11400000, guid: 059ee12639a33394d82a780f32475fa5, type: 2}
   - {fileID: 11400000, guid: 468bd5abf44aa1542bfd9e773a15447f, type: 2}
   - {fileID: 11400000, guid: 2d57e318a4843d64d8d3924124b94368, type: 2}
@@ -90,7 +90,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 75570e9520eae274da93b3f64e5930eb, type: 2}
   - {fileID: 11400000, guid: 4519d6286cf69b142ac9894ff8e06a31, type: 2}
   - {fileID: 11400000, guid: fac1760f3f3d22a47a8e14e34a1d7440, type: 2}
-  - {fileID: 11400000, guid: 93c389fe9d40638469bffd9de26d31ba, type: 2}
+  - {fileID: 11400000, guid: 8c55fb3d3347be747be61f433fb4a843, type: 2}
   - {fileID: 11400000, guid: b64f816f68b7d6a42b7d3857a4b5d931, type: 2}
   - {fileID: 11400000, guid: 0a439d3c316c36f4cae03a253c8839d4, type: 2}
   itemCraftFormulas:
@@ -143,6 +143,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0bba1d7b0967e3428404a9fc3211a7b, type: 2}
   - {fileID: 11400000, guid: 25f18d3131d816146b890611d9123df4, type: 2}
   - {fileID: 11400000, guid: 9336d482a0ee6ec42a3cc5d855bf7105, type: 2}
+  - {fileID: 11400000, guid: c036ac5144bfb36428bd9b2fa2a5ce2c, type: 2}
   - {fileID: 11400000, guid: 7082a6e38d055b6488ab9c67d95d3907, type: 2}
   - {fileID: 11400000, guid: 00144a2dd7250bb4ab60d49c66cc48f0, type: 2}
   - {fileID: 11400000, guid: dda02c5321170454e9c7eaab45f1a277, type: 2}
@@ -159,6 +160,7 @@ MonoBehaviour:
   playerCharacters:
   - {fileID: 11400000, guid: 0122f68aff58f2a4e995208bf67f18ba, type: 2}
   - {fileID: 11400000, guid: f924bc5e901d46141bb3c3ca9b6ef27a, type: 2}
+  - {fileID: 11400000, guid: 1f9d2937bcd564b47b49c53b58e4e8af, type: 2}
   - {fileID: 11400000, guid: 8c31218a0e7c7604ea751e1a56a13a76, type: 2}
   monsterCharacters:
   - {fileID: 11400000, guid: aeba3337cf294524f8e2902f87a7532d, type: 2}

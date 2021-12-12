@@ -30,6 +30,7 @@ Transform:
   m_Children:
   - {fileID: 920305622600515871}
   - {fileID: 1732911036665664133}
+  - {fileID: 5541161740663134248}
   m_Father: {fileID: 1235369025412852687}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -101,6 +102,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -293,6 +295,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -515,6 +518,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -596,6 +600,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -964,6 +969,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -1077,6 +1083,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -1189,6 +1196,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -1301,6 +1309,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -1533,7 +1542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isIdAssigned: 1
-  id: 25
+  id: 13
   visibleMaterials: []
   invisibleMaterials: []
   fpsMaterials: []
@@ -3237,6 +3246,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -3583,6 +3593,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -3704,7 +3715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56367cc2ed44f1e49835e9c247771fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assetId: 
+  assetId: 88407444a0e95b449a85461755915484
   objectId: 0
   visibleRange: 0
   alwaysVisible: 0
@@ -4048,7 +4059,6 @@ MonoBehaviour:
     elementId: 0
     dataChannel: 0
     forOwnerOnly: 1
-  gender: {fileID: 0}
   characterDatabases:
   - {fileID: 11400000, guid: 8c31218a0e7c7604ea751e1a56a13a76, type: 2}
   - {fileID: 11400000, guid: f924bc5e901d46141bb3c3ca9b6ef27a, type: 2}
@@ -4682,7 +4692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isIdAssigned: 1
-  id: 24
+  id: 12
   visibleMaterials: []
   invisibleMaterials: []
   fpsMaterials: []
@@ -4690,8 +4700,21 @@ MonoBehaviour:
   - {fileID: 7488806158477722732}
   hiddingRenderers: []
   fpsHiddingObjects:
-  - {fileID: 5157688784930740125}
-  fpsHiddingRenderers: []
+  - {fileID: 5959650822702300548}
+  - {fileID: 9052907616223339860}
+  - {fileID: 1363123736631627431}
+  - {fileID: 2539075941433748285}
+  - {fileID: 8928867778443229680}
+  - {fileID: 83203505010507743}
+  - {fileID: 497986658813068828}
+  - {fileID: 5459196261205218363}
+  fpsHiddingRenderers:
+  - {fileID: 2392759724615074439}
+  - {fileID: 5266337219168283490}
+  - {fileID: 6780380985620028592}
+  - {fileID: 6107027935558339474}
+  - {fileID: 6780380985620028592}
+  - {fileID: 5660822759419804305}
   genericAudioSource: {fileID: 0}
   effectContainers:
   - effectSocket: Floor
@@ -4728,7 +4751,7 @@ MonoBehaviour:
     instantiatedObjects: []
     activatingInstantiateObjectIndex: 0
   - equipSocket: ElbowL
-    transform: {fileID: 5381791457994017871}
+    transform: {fileID: 5799874044267992827}
     defaultModel: {fileID: 1216831638408330436}
     instantiatedObjects: []
     activatingInstantiateObjectIndex: 0
@@ -4794,6 +4817,11 @@ MonoBehaviour:
     activatingInstantiateObjectIndex: 0
   - equipSocket: Back_Attachment
     transform: {fileID: 1732911036665664133}
+    defaultModel: {fileID: 0}
+    instantiatedObjects: []
+    activatingInstantiateObjectIndex: 0
+  - equipSocket: Back_Attachment2
+    transform: {fileID: 5541161740663134248}
     defaultModel: {fileID: 0}
     instantiatedObjects: []
     activatingInstantiateObjectIndex: 0
@@ -5735,16 +5763,16 @@ MonoBehaviour:
       applyFootIk: 0
       applyPlayableIk: 0
     rightHandChargeState:
-      clip: {fileID: 0}
-      avatarMask: {fileID: 0}
+      clip: {fileID: 7400010, guid: d3e5b168e6bbe7d459e4e61994f3bd9f, type: 3}
+      avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
       animSpeedRate: 1
       transitionDuration: 0
       isAdditive: 0
       applyFootIk: 0
       applyPlayableIk: 0
     leftHandChargeState:
-      clip: {fileID: 0}
-      avatarMask: {fileID: 0}
+      clip: {fileID: 7400010, guid: d3e5b168e6bbe7d459e4e61994f3bd9f, type: 3}
+      avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
       animSpeedRate: 1
       transitionDuration: 0
       isAdditive: 0
@@ -9655,10 +9683,10 @@ MonoBehaviour:
       extendDuration: 0
       audioClips: []
   SheathAnimations:
-  - SheathweaponType: {fileID: 11400000, guid: f8c1eae7f66f9bb46a41403e61cd87cb, type: 2}
+  - SheathweaponType: {fileID: 11400000, guid: d433f880a1c9d6149bcbf3b5676ea6a0, type: 2}
     rightHandSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: 4638ca7fe98a28044a1dd9205af58dea, type: 3}
+        clip: {fileID: 7400000, guid: e538ae71329845540b7eb36b3113d582, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9672,7 +9700,7 @@ MonoBehaviour:
       audioClips: []
     rightHandUnSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: f95c96d798bb3b14c8087b88ad5c9f5d, type: 3}
+        clip: {fileID: 7400000, guid: 323a4c0f2feea504d9bd489e8797ae52, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9686,7 +9714,7 @@ MonoBehaviour:
       audioClips: []
     leftHandSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: 4638ca7fe98a28044a1dd9205af58dea, type: 3}
+        clip: {fileID: 7400000, guid: e538ae71329845540b7eb36b3113d582, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9700,7 +9728,7 @@ MonoBehaviour:
       audioClips: []
     leftHandUnSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: f95c96d798bb3b14c8087b88ad5c9f5d, type: 3}
+        clip: {fileID: 7400000, guid: 323a4c0f2feea504d9bd489e8797ae52, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9714,7 +9742,7 @@ MonoBehaviour:
       audioClips: []
     dualWeildSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: 4638ca7fe98a28044a1dd9205af58dea, type: 3}
+        clip: {fileID: 7400000, guid: e538ae71329845540b7eb36b3113d582, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9728,7 +9756,7 @@ MonoBehaviour:
       audioClips: []
     dualWeildUnSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: f95c96d798bb3b14c8087b88ad5c9f5d, type: 3}
+        clip: {fileID: 7400000, guid: 323a4c0f2feea504d9bd489e8797ae52, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9743,7 +9771,7 @@ MonoBehaviour:
   - SheathweaponType: {fileID: 11400000, guid: 68fba38efbfdced49a5d1e2ae95c0026, type: 2}
     rightHandSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: 4638ca7fe98a28044a1dd9205af58dea, type: 3}
+        clip: {fileID: 7400000, guid: 592cfd0df2e998f49823833a6b57b9d5, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9757,7 +9785,7 @@ MonoBehaviour:
       audioClips: []
     rightHandUnSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: f95c96d798bb3b14c8087b88ad5c9f5d, type: 3}
+        clip: {fileID: 7400000, guid: fd28cfef89aeaad4c889a67176677f0b, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9771,7 +9799,7 @@ MonoBehaviour:
       audioClips: []
     leftHandSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: 4638ca7fe98a28044a1dd9205af58dea, type: 3}
+        clip: {fileID: 7400000, guid: c10595db79b33624080794cb1cf7f863, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9785,7 +9813,7 @@ MonoBehaviour:
       audioClips: []
     leftHandUnSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: f95c96d798bb3b14c8087b88ad5c9f5d, type: 3}
+        clip: {fileID: 7400000, guid: e9693a1e011bac44bba380883116f6aa, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9799,7 +9827,7 @@ MonoBehaviour:
       audioClips: []
     dualWeildSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: 4638ca7fe98a28044a1dd9205af58dea, type: 3}
+        clip: {fileID: 7400000, guid: 687dffe2824275b44a08a3dd6e11f3d4, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9813,7 +9841,7 @@ MonoBehaviour:
       audioClips: []
     dualWeildUnSheathAnimations:
       state:
-        clip: {fileID: 7400000, guid: f95c96d798bb3b14c8087b88ad5c9f5d, type: 3}
+        clip: {fileID: 7400000, guid: 1efc9867c6a28c94eb872b7fcf7ddcb6, type: 3}
         avatarMask: {fileID: 31900000, guid: 46c4b7ef94e138345b701a79ad0e62c2, type: 2}
         animSpeedRate: 0
         transitionDuration: 0
@@ -9825,7 +9853,7 @@ MonoBehaviour:
       fixedDuration: 0
       extendDuration: 0
       audioClips: []
-  - SheathweaponType: {fileID: 11400000, guid: d433f880a1c9d6149bcbf3b5676ea6a0, type: 2}
+  - SheathweaponType: {fileID: 11400000, guid: f8c1eae7f66f9bb46a41403e61cd87cb, type: 2}
     rightHandSheathAnimations:
       state:
         clip: {fileID: 7400000, guid: 4638ca7fe98a28044a1dd9205af58dea, type: 3}
@@ -10624,6 +10652,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -10773,6 +10802,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -10885,6 +10915,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -11024,3 +11055,33 @@ MonoBehaviour:
   childIndex: 0
   setDefaultModelByChildIndex: 0
   setInstantiatedObjectsByContainersChildren: 0
+--- !u!1 &9052907616223339860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5541161740663134248}
+  m_Layer: 8
+  m_Name: Back_Attachment_2ndWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5541161740663134248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9052907616223339860}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.009, y: 0.253, z: -0.072}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9147919322318093098}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}

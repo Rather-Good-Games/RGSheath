@@ -35,8 +35,8 @@ MonoBehaviour:
     useInstantiatedObject: 0
     model: {fileID: 1000012646206576, guid: 8dd10cc0cbafc994e92ae2af479492bf, type: 3}
     instantiatedObjectIndex: 0
-    localPosition: {x: -0.068, y: -0.024, z: 0.009}
-    localEulerAngles: {x: 280.17142, y: 0.070910774, z: 359.7735}
+    localPosition: {x: -0.068, y: -0.04, z: 0.1225}
+    localEulerAngles: {x: -182.5, y: 0.107, z: 4.3}
     localScale: {x: 1, y: 1, z: 1}
   leftHandSheathEquipmentModels: []
   itemType: 2

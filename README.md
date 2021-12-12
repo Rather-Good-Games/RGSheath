@@ -2,19 +2,19 @@
 
 **Credits:** Special thanks to https://github.com/benhamlett aka TidyDev and his TidyPlayerSheath addon that helped make this project possible.
 
+And Special thanks to https://github.com/Callepo aka Callepo[AlphaAF] for updates, bug fixes and improving compatability with the MMORPG Kit.
+
 **Author:** RatherGood1
 
-**Version**: 0.003
+**Version**: 0.11
 
-**Updated:** 3 Dec 21
+This is a working functional demo. Check back often for further change/improvements.
 
-**Compatibility:** Tested on Suriyun MMORPG Kit Version 1.72b2 and Unity 2021.1.23f
+**Updated:** 11 Dec 21
+
+**Compatibility:** Tested on Suriyun MMORPG Kit Version 1.72c4 and Unity 2021.1.23f
 
 **Description:** 
-
-**Disclaimer: This is NOT a finished project. In lieu of donations, please fork, modify and push back changes if you wish to improve this project! Minimal/limited support or special requests will be provided at my discression.** 
-
-**Throughout the code you will find "TODO:" remarks of issues/improvemnts/bugs identified. Pick one and fix it!**
 
 This is a modification/addon to https://github.com/suriyun-production/mmorpg-kit-docs sheath / un-sheath animations and model switching support.
 
@@ -37,12 +37,12 @@ You need to provide your own animations. Example uses Explosive "RPG Character M
 If you would like to test out RGSheath functionality. 
 
 1. Start a fresh Unity 3D project.
-2. From the unity asset store:     Download: MMOKIT 1.72b2 and "RPG Character Mecanim Animation Pack"
-3. Import the RGSheathV0p003.unityPackage
-4. Make the core modifications listed below.
-5. Add this scene to the top of your build settings then open and run the scene: Assets\RatherGood\MMOKit\RGSheath\Scenes\00InitTestRGSheath
-6. Equip a Bow001 and Sword001(single/dual) in the inventory weapon switch.
-7. Press "Z" to sheath/un-sheath. "~" to change weapons.
+2. From the unity asset store:     Download: MMOKIT 1.72c4+ and "RPG Character Mecanim Animation Pack"
+3. Import the latest RGSheathVXXX.unityPackage
+4. Add this scene to the top of your build settings then open and run the scene: Assets\RatherGood\MMOKit\RGSheath\Scenes\00InitTestRGSheath
+5. Equip a Bow001 and Sword001(single/dual) in the inventory weapon switch.
+6. Press "Z" to sheath/un-sheath. "~" to change weapons.
+7. Press "V" to enter first person view.
 
 
 NOTES:
@@ -50,35 +50,13 @@ NOTES:
 * Look at the "Male_CC_RGSheath" Prefab and see how its set up.
 * ShooterCharacterControllerRG should be the controller used on your GameInstance.
 * Make sure the new weapons are in your database.
-* Use the conveince scritable object "WeaponAnimationDataCopyRG" to setup and copy animations between your character or covert to PlayableCharacterModel form AnimatorCharacterModel (sp?).
+* (NOTE:) "PlayableCharacterModel_Custom" replaces PlayableCharacterModel on the player. You may need to view the prefab in "Debug" mode if all the fields do not show in the inspector.
+* PitchIK settings vary by model or weapon type. PitchIKMgr_RGSheath may help tweek settings for your model. Results will vary. DEtermine y experimentation in run mode, copy and save in editor.
 
 
 **Core MMORPG Kit modifications:**
 
-Make partial:
-```csharp 
-public partial class PlayableCharacterModel : BaseCharacterModel
-```
-
-Make partial:
-```csharp 
- public partial struct WeaponAnimations : IWeaponAnims
-```
-
-in BaseCharacterModel
-```csharp 
-protected readonly Dictionary<string, Dictionary<string, GameObject>> cacheModels = new Dictionary<string, Dictionary<string, GameObject>>();
-```
-also
-```csharp 
-protected DestroyCacheModel(string equipPosition)
-```
-
-in BaseCharacterEntity
- also
-```csharp 
-public virtual bool CanAttack()
-```
+Thans to Callepo there are no core modifications needed!
 
 **Instructions for use:**
 

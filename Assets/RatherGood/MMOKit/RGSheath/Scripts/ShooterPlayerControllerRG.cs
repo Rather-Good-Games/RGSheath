@@ -7,19 +7,14 @@ namespace MultiplayerARPG
 {
     public class ShooterPlayerControllerRG : ShooterPlayerCharacterController
     {
-        //TODO: Combat mode when charging weapon all movement slow except forward sprint. Movement looks odd.
 
-        [Header("RG Debug me")]
-        public bool switchControllerModeWhenSheathed = true;
 
         protected override void Update()
         {
-            if (switchControllerModeWhenSheathed && CurrentGameInstance.enableRatherGoodSheath)
+
+            if (CurrentGameInstance.switchControllerModeWhenSheathed && CurrentGameInstance.enableRatherGoodSheath)
             {
-                if (PlayerCharacterEntity.IsSheathed)
-                    mode = ControllerMode.Adventure;
-                else
-                    mode = ControllerMode.Combat;
+                mode = (viewMode == ShooterControllerViewMode.Fps) ? ControllerMode.Combat : ((PlayerCharacterEntity.IsSheathed) ? ControllerMode.Adventure : ControllerMode.Combat);
             }
 
             base.Update();

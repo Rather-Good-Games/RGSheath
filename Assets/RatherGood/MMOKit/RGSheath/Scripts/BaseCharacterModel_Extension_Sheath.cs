@@ -6,7 +6,7 @@ namespace MultiplayerARPG
 {
     public abstract partial class BaseCharacterModel
     {
-        protected  Dictionary<string, Dictionary<string, GameObject>> getCacheModels
+        protected Dictionary<string, Dictionary<string, GameObject>> getCacheModels
         {
             get { return cacheModels; }   // get method
         }

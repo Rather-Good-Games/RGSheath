@@ -37,16 +37,16 @@ MonoBehaviour:
     useInstantiatedObject: 0
     model: {fileID: 1000010853050978, guid: a4d72b2e28dda4b46bda6b164b763764, type: 3}
     instantiatedObjectIndex: 0
-    localPosition: {x: 0.063, y: 0.076, z: 0.038}
-    localEulerAngles: {x: 62.249294, y: 264.76367, z: 261.44308}
+    localPosition: {x: 0.0429, y: 0, z: 0.0443}
+    localEulerAngles: {x: 2.8, y: -31.79, z: -21.6}
     localScale: {x: 1, y: 1, z: 1}
   leftHandSheathEquipmentModels:
-  - equipSocket: Back_Attachment
+  - equipSocket: Back_Attachment2
     useInstantiatedObject: 0
     model: {fileID: 1000010853050978, guid: a4d72b2e28dda4b46bda6b164b763764, type: 3}
     instantiatedObjectIndex: 0
-    localPosition: {x: -0.049, y: 0.08, z: 0.033}
-    localEulerAngles: {x: 60.276955, y: 87.14319, z: 85.14952}
+    localPosition: {x: -0.047, y: 0, z: 0.046}
+    localEulerAngles: {x: -7.87, y: 24.16, z: -7.096}
     localScale: {x: 1, y: 1, z: 1}
   itemType: 2
   useItemCooldown: 0

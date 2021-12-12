@@ -22,6 +22,9 @@ namespace MultiplayerARPG
         [Tooltip("If using special PitchIKMgr_RGSheath.")]
         public bool disablePitchIKWhenSheathed = true;
 
+        [Tooltip("For ShooterPlayerControllerRG Mod will switch \"Adventure\" when sheathed and \"Conbat\" when fighting or FPV.")]
+        public bool switchControllerModeWhenSheathed = true;
+
         [Tooltip("For hotkey assignment.")]
         public string sheathButtonName = "Sheath";
 

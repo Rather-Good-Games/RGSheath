@@ -43,12 +43,12 @@ namespace MultiplayerARPG
             onEquipWeaponSetChange -= EquipWeaponSetChange;
             onSheathChange -= StartShiethProcess;
         }
-
-        public override bool CanDoActions()
+        public override bool CanAttack()
         {
-            return !this.IsDead() && !isSheathed && !IsReloading && !IsAttacking && !IsUsingSkill && !IsReloading && !IsPlayingActionAnimation();
+            if (isSheathed)
+                return false;
+            return base.CanAttack();
         }
-
         private void EquipWeaponSetChange(byte equipWeaponSet)
         {
             StartShiethProcess(isSheathed.Value);

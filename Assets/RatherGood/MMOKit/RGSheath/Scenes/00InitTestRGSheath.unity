@@ -348,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &655560734
 Transform:
   m_ObjectHideFlags: 0
@@ -752,7 +752,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableRatherGoodSheath: 1
+  enableRatherGoodSecondWeaponSet: 1
+  enableCharacterSelectSheath: 1
   disablePitchIKWhenSheathed: 1
+  switchControllerModeWhenSheathed: 1
   sheathButtonName: Sheath
   dimensionType: 0
   saveSystem: {fileID: 0}
@@ -865,6 +868,7 @@ MonoBehaviour:
   canDismantleItemByPlayer: 0
   canRepairItemByPlayer: 0
   inventorySystem: 1
+  noInventoryWeightLimit: 0
   doNotFillEmptySlots: 0
   baseSlotLimit: 60
   playerStorage:
@@ -883,7 +887,7 @@ MonoBehaviour:
   petDeadLockDuration: 60
   petUnSummonLockDuration: 30
   joinInstanceMapDistance: 20
-  newCharacterSetting: {fileID: 11400000, guid: 96c4888e481bfee4887f1537d72da080,
+  newCharacterSetting: {fileID: 11400000, guid: bcb1d0f552c4a2e4bab3cfe734bfdc7c,
     type: 2}
   startGold: 0
   startItems: []
@@ -939,7 +943,7 @@ MonoBehaviour:
     keyCode: 102
   - keyName: CameraRotate
     keyCode: 324
-  - keyName: Attack
+  - keyName: SwitchViewMode
     keyCode: 118
   - keyName: Jump
     keyCode: 32
@@ -2107,7 +2111,7 @@ GameObject:
   m_Layer: 0
   m_Name: RGSheath README
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2139,8 +2143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: 'Hit "Z" for sheath/un-sheath
 
-    Uses: RPG Character Mecanim Animation
-    Pack (Sold seperately)
+    Hit "V" to switch FPS/TPS
+
+    Uses: RPG
+    Character Mecanim Animation Pack (Sold seperately)
 
     See: https://github.com/Rather-Good-Games/RGSheath
     for more details.'
@@ -2172,7 +2178,7 @@ PrefabInstance:
     - target: {fileID: 1879311994110522783, guid: c36f3898823484a43a779156aa128fe5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1879311994110522783, guid: c36f3898823484a43a779156aa128fe5,
         type: 3}
@@ -2241,7 +2247,7 @@ PrefabInstance:
     - target: {fileID: 2068265703915574006, guid: 88407444a0e95b449a85461755915484,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2068265703915574006, guid: 88407444a0e95b449a85461755915484,
         type: 3}

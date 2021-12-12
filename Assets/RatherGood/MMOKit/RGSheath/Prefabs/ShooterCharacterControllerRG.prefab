@@ -68,8 +68,8 @@ MonoBehaviour:
   buildRotateSpeed: 200
   crosshairRect: {fileID: 1803140774845477665}
   defaultCameraRotationSpeedScaleSaveKey: DEFAULT_CAMERA_ROTATION_SPEED_SCALE
-  tpsZoomDistance: 3
-  tpsMinZoomDistance: 3
+  tpsZoomDistance: 1
+  tpsMinZoomDistance: 0.5
   tpsMaxZoomDistance: 3
   tpsTargetOffset: {x: 0.75, y: 1.25, z: 0}
   tpsTargetOffsetWhileCrouching: {x: 0.75, y: 0.75, z: 0}
