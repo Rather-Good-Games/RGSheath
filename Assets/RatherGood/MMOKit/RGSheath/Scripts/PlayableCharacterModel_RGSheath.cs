@@ -145,7 +145,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
                 IEquipmentItem hiddenRightHandItem;
                 IEquipmentItem hiddenLeftHandItem;
                 EquipWeapons equipWeaponsHidden;
-
+                int WeaponSet = 0;
                 foreach (EquipWeapons equipWeapons in pce.SelectableWeaponSets)
                 {
                     if (equipWeapons != pce.EquipWeapons)
@@ -155,11 +155,12 @@ namespace MultiplayerARPG.GameData.Model.Playables
                         equipWeaponsHidden = equipWeapons;
 
                         if (hiddenRightHandItem != null && hiddenRightHandItem.IsWeapon())
-                            InstantiateEquipModel3("HiddenWeaponRight", hiddenRightHandItem.DataId, equipWeaponsHidden.rightHand.level, (hiddenRightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
+                            InstantiateEquipModel3("HiddenWeaponRight" + WeaponSet, hiddenRightHandItem.DataId, equipWeaponsHidden.rightHand.level, (hiddenRightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsWeapon())
-                            InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
+                            InstantiateEquipModel3("HiddenWeaponLeft" + WeaponSet, hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsShield())
-                            InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
+                            InstantiateEquipModel3("HiddenWeaponLeft" + WeaponSet, hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
+                        WeaponSet++;
                     }
                 }
             }
