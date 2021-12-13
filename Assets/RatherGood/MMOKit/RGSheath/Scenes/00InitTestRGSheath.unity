@@ -348,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &655560734
 Transform:
   m_ObjectHideFlags: 0
@@ -2162,6 +2162,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a337e47669c9e46b404eafabe7ba0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1841078608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2788224390015402556, guid: 88407444a0e95b449a85461755915484,
+    type: 3}
+  m_PrefabInstance: {fileID: 9135286876987375842}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c74016ac73a5de489347503fc752e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &977075118069204967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1879311994110522783, guid: c36f3898823484a43a779156aa128fe5,
@@ -2298,6 +2310,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2788224390015402556, guid: 88407444a0e95b449a85461755915484,
+        type: 3}
+      propertyPath: onRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1841078608}
+    - target: {fileID: 2788224390015402556, guid: 88407444a0e95b449a85461755915484,
+        type: 3}
+      propertyPath: onRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_IsSheathed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2788224390015402556, guid: 88407444a0e95b449a85461755915484,
+        type: 3}
+      propertyPath: onRespawn.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MultiplayerARPG.BaseCharacterEntity, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6116498910758214287, guid: 88407444a0e95b449a85461755915484,
         type: 3}

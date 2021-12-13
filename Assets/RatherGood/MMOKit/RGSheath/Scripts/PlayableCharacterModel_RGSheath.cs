@@ -129,39 +129,40 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
             }
 
-            if (CurrentGameInstance.enableRatherGoodSecondWeaponSet)
+            SetSecondWeaponSetWeapons();
+        }
+        public override void SetEquipItems(IList<CharacterItem> equipItems)
+        {
+            base.SetEquipItems(equipItems);
+            SetSecondWeaponSetWeapons();
+        }
+
+        public void SetSecondWeaponSetWeapons()
+        {
+            PlayerCharacterEntity pce = this.GetComponent<PlayerCharacterEntity>();
+            if (GameInstance.Singleton.enableRatherGoodSecondWeaponSet)
             {
                 IEquipmentItem hiddenRightHandItem;
                 IEquipmentItem hiddenLeftHandItem;
                 EquipWeapons equipWeaponsHidden;
-
-                if (pce.SelectableWeaponSets.Count == 2)
-                    if (pce.SelectableWeaponSets.IndexOf(equipWeapons) == 0)
+                int WeaponSet = 0;
+                foreach (EquipWeapons equipWeapons in pce.SelectableWeaponSets)
+                {
+                    if (equipWeapons != pce.EquipWeapons)
                     {
-                        hiddenRightHandItem = pce.SelectableWeaponSets[1].GetRightHandEquipmentItem();
-                        hiddenLeftHandItem = pce.SelectableWeaponSets[1].GetLeftHandEquipmentItem();
-                        equipWeaponsHidden = pce.SelectableWeaponSets[1];
+                        hiddenRightHandItem = equipWeapons.GetRightHandEquipmentItem();
+                        hiddenLeftHandItem = equipWeapons.GetLeftHandEquipmentItem();
+                        equipWeaponsHidden = equipWeapons;
 
                         if (hiddenRightHandItem != null && hiddenRightHandItem.IsWeapon())
-                            InstantiateEquipModel3("HiddenWeaponRight", hiddenRightHandItem.DataId, equipWeaponsHidden.rightHand.level, (hiddenRightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
+                            InstantiateEquipModel3("HiddenWeaponRight" + WeaponSet, hiddenRightHandItem.DataId, equipWeaponsHidden.rightHand.level, (hiddenRightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsWeapon())
-                            InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
+                            InstantiateEquipModel3("HiddenWeaponLeft" + WeaponSet, hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsShield())
-                            InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
+                            InstantiateEquipModel3("HiddenWeaponLeft" + WeaponSet, hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
+                        WeaponSet++;
                     }
-                    else if (pce.SelectableWeaponSets.IndexOf(equipWeapons) == 1)
-                    {
-                        hiddenRightHandItem = pce.SelectableWeaponSets[0].GetRightHandEquipmentItem();
-                        hiddenLeftHandItem = pce.SelectableWeaponSets[0].GetLeftHandEquipmentItem();
-                        equipWeaponsHidden = pce.SelectableWeaponSets[0];
-
-                        if (hiddenRightHandItem != null && hiddenRightHandItem.IsWeapon())
-                            InstantiateEquipModel3("HiddenWeaponRight", hiddenRightHandItem.DataId, equipWeaponsHidden.rightHand.level, (hiddenRightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
-                        if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsWeapon())
-                            InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
-                        if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsShield())
-                            InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
-                    }
+                }
             }
         }
 
