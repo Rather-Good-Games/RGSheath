@@ -753,7 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableRatherGoodSheath: 1
   enableRatherGoodSecondWeaponSet: 1
-  enableCharacterSelectSheath: 0
+  enableCharacterSelectSheath: 1
   disablePitchIKWhenSheathed: 1
   switchControllerModeWhenSheathed: 1
   sheathButtonName: Sheath
