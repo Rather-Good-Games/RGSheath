@@ -129,14 +129,24 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
             }
 
-            if (CurrentGameInstance.enableRatherGoodSecondWeaponSet)
+            SetSecondWeaponSetWeapons();
+        }
+        public override void SetEquipItems(IList<CharacterItem> equipItems)
+        {
+            base.SetEquipItems(equipItems);
+            SetSecondWeaponSetWeapons();
+        }
+
+        public void SetSecondWeaponSetWeapons()
+        {
+            PlayerCharacterEntity pce = this.GetComponent<PlayerCharacterEntity>();
+            if (GameInstance.Singleton.enableRatherGoodSecondWeaponSet)
             {
                 IEquipmentItem hiddenRightHandItem;
                 IEquipmentItem hiddenLeftHandItem;
                 EquipWeapons equipWeaponsHidden;
-
                 if (pce.SelectableWeaponSets.Count == 2)
-                    if (pce.SelectableWeaponSets.IndexOf(equipWeapons) == 0)
+                    if (pce.SelectableWeaponSets.IndexOf(pce.EquipWeapons) == 0)
                     {
                         hiddenRightHandItem = pce.SelectableWeaponSets[1].GetRightHandEquipmentItem();
                         hiddenLeftHandItem = pce.SelectableWeaponSets[1].GetLeftHandEquipmentItem();
@@ -149,7 +159,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsShield())
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
                     }
-                    else if (pce.SelectableWeaponSets.IndexOf(equipWeapons) == 1)
+                    else if (pce.SelectableWeaponSets.IndexOf(pce.EquipWeapons) == 1)
                     {
                         hiddenRightHandItem = pce.SelectableWeaponSets[0].GetRightHandEquipmentItem();
                         hiddenLeftHandItem = pce.SelectableWeaponSets[0].GetLeftHandEquipmentItem();
@@ -161,7 +171,9 @@ namespace MultiplayerARPG.GameData.Model.Playables
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsShield())
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
+
                     }
+
             }
         }
 
