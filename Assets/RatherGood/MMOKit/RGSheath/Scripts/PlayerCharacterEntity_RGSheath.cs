@@ -20,11 +20,17 @@ namespace MultiplayerARPG
         [DevExtMethods("Awake")]
         protected void PlayerSheathAwake()
         {
+
+            if (!CurrentGameInstance.enableRatherGoodSheath)
+                return;
+
             playableCharacterModel_ForSheath = GetComponent<PlayableCharacterModel_Custom>();
             pitchIKMgr_RGSheath = GetComponent<PitchIKMgr_RGSheath>();
             IsSheathed = GameInstance.Singleton.enableCharacterSelectSheath;
+
             onStart += PlayerSheathInit;
             onUpdate += PlayerSheathOnUpdate;
+
         }
 
         protected void PlayerSheathInit()
@@ -74,7 +80,6 @@ namespace MultiplayerARPG
 
         }
 
-
         protected override void OnEquipWeaponSetChange(bool isInitial, byte equipWeaponSet)
         {
 
@@ -96,7 +101,7 @@ namespace MultiplayerARPG
                 yield return null;
             }
 
-            //this will trigger the OnEquipWeaponSetChange event after swap for toher listenera
+            //this will trigger the OnEquipWeaponSetChange event after swap for other listeners
             base.OnEquipWeaponSetChange(isInitial, equipWeaponSet);
 
             //If using MMORPG PithIK and PitchIKMgr_RGSheath mod (not required)

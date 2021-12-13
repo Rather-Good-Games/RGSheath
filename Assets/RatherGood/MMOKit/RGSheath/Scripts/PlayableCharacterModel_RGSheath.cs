@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace MultiplayerARPG.GameData.Model.Playables
 {
     public partial class PlayableCharacterModel_Custom : PlayableCharacterModel
@@ -14,8 +13,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
         {
             weaponChangeInProcess = true;
 
-            //Only sheathing not changing
-            if (newEquipWeapons == null)
+            if (newEquipWeapons == null) //Only sheathing not changing weapons
                 newEquipWeapons = equipWeapons;
             StartCoroutine(ShiethProcess(isSheathed, newEquipWeapons));
         }
@@ -78,7 +76,6 @@ namespace MultiplayerARPG.GameData.Model.Playables
             }
 
             //Switch to new weapons after duration 
-
             InstantiateEquipModel3("HiddenWeaponRight");
             InstantiateEquipModel3("HiddenWeaponLeft");
             SetEquipWeapons(newEquipWeapons);
@@ -93,11 +90,13 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
             base.SetEquipWeapons(newEquipWeapons);
 
+            PlayerCharacterEntity pce = this.GetComponent<PlayerCharacterEntity>();
+
             IEquipmentItem rightHandItem = equipWeapons.GetRightHandEquipmentItem();
             IEquipmentItem leftHandItem = equipWeapons.GetLeftHandEquipmentItem();
 
             //Set sheathed models instead of normal weapon models
-            if (this.GetComponent<PlayerCharacterEntity>().IsSheathed)
+            if (pce.IsSheathed)
             {
                 if (rightHandItem != null && rightHandItem.IsWeapon())
                     InstantiateEquipModel3(GameDataConst.EQUIP_POSITION_RIGHT_HAND, rightHandItem.DataId, equipWeapons.rightHand.level, (rightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
@@ -130,18 +129,18 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
             }
 
-            if (GameInstance.Singleton.enableRatherGoodSecondWeaponSet)
+            if (CurrentGameInstance.enableRatherGoodSecondWeaponSet)
             {
                 IEquipmentItem hiddenRightHandItem;
                 IEquipmentItem hiddenLeftHandItem;
                 EquipWeapons equipWeaponsHidden;
 
-                if (this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets.Count == 2)
-                    if (this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets.IndexOf(newEquipWeapons) == 0)
+                if (pce.SelectableWeaponSets.Count == 2)
+                    if (pce.SelectableWeaponSets.IndexOf(equipWeapons) == 0)
                     {
-                        hiddenRightHandItem = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[1].GetRightHandEquipmentItem();
-                        hiddenLeftHandItem = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[1].GetLeftHandEquipmentItem();
-                        equipWeaponsHidden = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[1];
+                        hiddenRightHandItem = pce.SelectableWeaponSets[1].GetRightHandEquipmentItem();
+                        hiddenLeftHandItem = pce.SelectableWeaponSets[1].GetLeftHandEquipmentItem();
+                        equipWeaponsHidden = pce.SelectableWeaponSets[1];
 
                         if (hiddenRightHandItem != null && hiddenRightHandItem.IsWeapon())
                             InstantiateEquipModel3("HiddenWeaponRight", hiddenRightHandItem.DataId, equipWeaponsHidden.rightHand.level, (hiddenRightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
@@ -150,11 +149,11 @@ namespace MultiplayerARPG.GameData.Model.Playables
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsShield())
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
                     }
-                    else if (this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets.IndexOf(newEquipWeapons) == 1)
+                    else if (pce.SelectableWeaponSets.IndexOf(equipWeapons) == 1)
                     {
-                        hiddenRightHandItem = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[0].GetRightHandEquipmentItem();
-                        hiddenLeftHandItem = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[0].GetLeftHandEquipmentItem();
-                        equipWeaponsHidden = this.GetComponent<PlayerCharacterEntity>().SelectableWeaponSets[0];
+                        hiddenRightHandItem = pce.SelectableWeaponSets[0].GetRightHandEquipmentItem();
+                        hiddenLeftHandItem = pce.SelectableWeaponSets[0].GetLeftHandEquipmentItem();
+                        equipWeaponsHidden = pce.SelectableWeaponSets[0];
 
                         if (hiddenRightHandItem != null && hiddenRightHandItem.IsWeapon())
                             InstantiateEquipModel3("HiddenWeaponRight", hiddenRightHandItem.DataId, equipWeaponsHidden.rightHand.level, (hiddenRightHandItem as IWeaponItem).RightHandSheathEquipmentModels, out rightHandEquipmentEntity);
@@ -162,9 +161,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
                         if (hiddenLeftHandItem != null && hiddenLeftHandItem.IsShield())
                             InstantiateEquipModel3("HiddenWeaponLeft", hiddenLeftHandItem.DataId, equipWeaponsHidden.leftHand.level, (hiddenLeftHandItem as IWeaponItem).LeftHandSheathEquipmentModels, out leftHandEquipmentEntity);
-
                     }
-
             }
         }
 
@@ -272,32 +269,6 @@ namespace MultiplayerARPG.GameData.Model.Playables
             transform.localScale = new Vector3(globalScale.x / transform.lossyScale.x, globalScale.y / transform.lossyScale.y, globalScale.z / transform.lossyScale.z);
         }
 
-
-        //TODO: Try to fix weapon charge clip not using transition duration (For bow pull with 0.003 S duration animation. Still not exatly right here. )
-        //public override void PlayWeaponChargeClip(int dataId, bool isLeftHand)
-        //{
-        //    isDoingAction = true;
-        //    WeaponAnimations weaponAnimations;
-        //    if (TryGetWeaponAnimations(dataId, out weaponAnimations))
-        //    {
-        //        if (isLeftHand && weaponAnimations.leftHandChargeState.clip != null)
-        //        {
-        //            Behaviour.PlayAction(weaponAnimations.leftHandChargeState, weaponAnimations.leftHandChargeState.animSpeedRate, weaponAnimations.leftHandChargeState.transitionDuration);
-        //            return;
-        //        }
-        //        if (!isLeftHand && weaponAnimations.rightHandChargeState.clip != null)
-        //        {
-        //            Behaviour.PlayAction(weaponAnimations.rightHandChargeState, weaponAnimations.rightHandChargeState.animSpeedRate, weaponAnimations.rightHandChargeState.transitionDuration);
-        //            return;
-        //        }
-        //    }
-
-        //if (isLeftHand)
-        //    Behaviour.PlayAction(defaultAnimations.leftHandChargeState, weaponAnimations.leftHandChargeState.animSpeedRate, weaponAnimations.leftHandChargeState.transitionDuration);
-        //else
-        //    Behaviour.PlayAction(defaultAnimations.rightHandChargeState, weaponAnimations.rightHandChargeState.animSpeedRate, weaponAnimations.rightHandChargeState.transitionDuration);
-        //}
-
         public new ActionAnimation[] GetRightHandAttackAnimations(int dataId)
         {
             WeaponAnimations anims;
@@ -312,4 +283,3 @@ namespace MultiplayerARPG.GameData.Model.Playables
         }
     }
 }
-

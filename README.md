@@ -6,11 +6,14 @@ And Special thanks to https://github.com/Callepo aka Callepo[AlphaAF] for update
 
 **Author:** RatherGood1
 
-**Version**: 0.12
+**Version**: 0.13
 
 This is a working functional demo. Check back often for further change/improvements.
 
-Fixes some issues with second weapon set not displayign properly
+0.13 Fixes sheathed weapons not showing in char select screen (Only shows single weapon set)
+
+0.12 Fixes some issues with second weapon set not displayign properly.
+
 
 **Updated:** 12 Dec 21
 
