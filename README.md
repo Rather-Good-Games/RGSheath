@@ -1,21 +1,25 @@
 # RGSheath
 
-**Credits:** Special thanks to https://github.com/benhamlett aka TidyDev and his TidyPlayerSheath addon that helped make this project possible.
+**Credits:** 
+
+Special thanks to https://github.com/benhamlett aka TidyDev and his TidyPlayerSheath addon that helped make this project possible.
 
 And Special thanks to https://github.com/Callepo aka Callepo[AlphaAF] for updates, bug fixes and improving compatability with the MMORPG Kit.
 
 **Author:** RatherGood1
 
-**Version**: 0.13
+**Version**: 0.15
 
 This is a working functional demo. Check back often for further change/improvements.
+
+0.15 Adds unlimited extra weapon sets and fixes a few more bugs.
 
 0.13 Fixes sheathed weapons not showing in char select screen (Only shows single weapon set)
 
 0.12 Fixes some issues with second weapon set not displayign properly.
 
 
-**Updated:** 12 Dec 21
+**Updated:** 13 Dec 21
 
 **Compatibility:** Tested on Suriyun MMORPG Kit Version 1.72c4 and Unity 2021.1.23f
 
