@@ -1,11 +1,9 @@
-using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace MultiplayerARPG
 {
-    public class ShooterPlayerControllerRG : ShooterPlayerCharacterController
+    public partial class ShooterPlayerControllerRG : ShooterPlayerCharacterController
     {
 
 

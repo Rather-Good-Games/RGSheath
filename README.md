@@ -8,9 +8,11 @@ And Special thanks to https://github.com/Callepo aka Callepo[AlphaAF] for update
 
 **Author:** RatherGood1
 
-**Version**: 0.15
+**Version**: 0.2
 
 This is a working functional demo. Check back often for further change/improvements.
+
+0.2 Update for kit 1.73c changes
 
 0.15 Adds unlimited extra weapon sets and fixes a few more bugs.
 
@@ -19,9 +21,10 @@ This is a working functional demo. Check back often for further change/improveme
 0.12 Fixes some issues with second weapon set not displayign properly.
 
 
-**Updated:** 13 Dec 21
+**Updated:** 17 Feb 22
 
-**Compatibility:** Tested on Suriyun MMORPG Kit Version 1.72c4 and Unity 2021.1.23f
+
+**Compatibility:** Tested on Suriyun MMORPG Kit Version 1.73c and Unity 2021.1.23f
 
 **Description:** 
 

@@ -160,7 +160,6 @@ MonoBehaviour:
   networkPort: 7770
   useWebSocket: 0
   webSocketSecure: 0
-  webSocketSslProtocols: 3072
   webSocketCertificateFilePath: 
   webSocketCertificatePassword: 
   maxConnections: 4
@@ -817,14 +816,22 @@ MonoBehaviour:
     tag: MonsterTag
   npcTag:
     tag: NpcTag
+  vehicleTag:
+    tag: VehicleTag
   itemDropTag:
     tag: ItemDropTag
   buildingTag:
     tag: BuildingTag
   harvestableTag:
     tag: HarvestableTag
-  characterLayer:
-    layerIndex: 8
+  playerLayer:
+    layerIndex: 17
+  monsterLayer:
+    layerIndex: 18
+  npcLayer:
+    layerIndex: 19
+  vehicleLayer:
+    layerIndex: 20
   itemDropLayer:
     layerIndex: 9
   buildingLayer:
