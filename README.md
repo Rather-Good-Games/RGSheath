@@ -8,9 +8,11 @@ And Special thanks to https://github.com/Callepo aka Callepo[AlphaAF] for update
 
 **Author:** RatherGood1
 
-**Version**: 0.2
+**Version**: 0.3
 
 This is a working functional demo. Check back often for further change/improvements.
+
+0.3 Now with Monser Sheath! See example monsters in the demo to see how to set them up.
 
 0.2 Update for kit 1.73c changes
 
@@ -21,7 +23,7 @@ This is a working functional demo. Check back often for further change/improveme
 0.12 Fixes some issues with second weapon set not displayign properly.
 
 
-**Updated:** 17 Feb 22
+**Updated:** 22 Feb 22
 
 
 **Compatibility:** Tested on Suriyun MMORPG Kit Version 1.73c and Unity 2021.1.23f
