@@ -30,9 +30,7 @@ MonoBehaviour:
     amount: 1
   - item: {fileID: 11400000, guid: 8c55fb3d3347be747be61f433fb4a843, type: 2}
     amount: 2
-  - item: {fileID: 11400000, guid: b64f816f68b7d6a42b7d3857a4b5d931, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: 99ce6353c3a0b344bb452d0b2035feed, type: 2}
+  - item: {fileID: 11400000, guid: ccd7bf913c6aa3c44b31bef68436a2d1, type: 2}
     amount: 1
   - item: {fileID: 11400000, guid: 4519d6286cf69b142ac9894ff8e06a31, type: 2}
     amount: 1

@@ -972,6 +972,8 @@ MonoBehaviour:
     keyCode: 107
   - keyName: Sheath
     keyCode: 122
+  - keyName: ToggleCursorModButton
+    keyCode: 46
   settingsSaveKeyPrefix: SETTING_KEY_BIND
 --- !u!114 &1379718505
 MonoBehaviour:

@@ -90,10 +90,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
             base.SetEquipWeapons(newEquipWeapons);
 
-            PlayerCharacterEntity pce = this.GetComponent<PlayerCharacterEntity>();
-
-            if (pce == null)
-                return; //maybe monster. TODO something else for this?
+            BaseCharacterEntity bce = this.GetComponent<BaseCharacterEntity>();
 
             IEquipmentItem rightHandItem = equipWeapons.GetRightHandEquipmentItem();
             IEquipmentItem leftHandItem = equipWeapons.GetLeftHandEquipmentItem();
@@ -102,7 +99,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
             BaseEquipmentEntity tempLeftHandEquipmentEntity;
 
             //Set sheathed models instead of normal weapon models
-            if (pce.IsSheathed)
+            if (bce.IsSheathed)
             {
                 if (rightHandItem != null && rightHandItem.IsWeapon())
                 {
@@ -159,9 +156,6 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
             }
 
-
-
-
             SetSecondWeaponSetWeapons();
         }
 
@@ -178,9 +172,7 @@ namespace MultiplayerARPG.GameData.Model.Playables
         public void SetSecondWeaponSetWeapons()
         {
 
-
-
-            PlayerCharacterEntity pce = this.GetComponent<PlayerCharacterEntity>();
+            BaseCharacterEntity bce = this.GetComponent<BaseCharacterEntity>();
             if (GameInstance.Singleton.enableRatherGoodSecondWeaponSet)
             {
                 IEquipmentItem hiddenRightHandItem;
@@ -190,9 +182,9 @@ namespace MultiplayerARPG.GameData.Model.Playables
                 BaseEquipmentEntity tempRrightHandEquipmentEntity;
                 BaseEquipmentEntity tempLeftHandEquipmentEntity;
 
-                foreach (EquipWeapons equipWeapons in pce.SelectableWeaponSets)
+                foreach (EquipWeapons equipWeapons in bce.SelectableWeaponSets)
                 {
-                    if (equipWeapons != pce.EquipWeapons)
+                    if (equipWeapons != bce.EquipWeapons)
                     {
                         hiddenRightHandItem = equipWeapons.GetRightHandEquipmentItem();
                         hiddenLeftHandItem = equipWeapons.GetLeftHandEquipmentItem();

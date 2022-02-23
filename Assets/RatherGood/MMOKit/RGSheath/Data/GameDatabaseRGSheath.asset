@@ -20,8 +20,8 @@ MonoBehaviour:
   - {fileID: 114740533051626506, guid: e4504fbed449d4c4cba6c22bd4953a25, type: 3}
   - {fileID: 114666491478848388, guid: 545a32703d951094185d08198bc8316d, type: 3}
   monsterCharacterEntities:
-  - {fileID: 114107677553822186, guid: 2124e2e5e8dd2794ea8c8aff808d0096, type: 3}
-  - {fileID: 114313543944479198, guid: c26675f5ea04ade429c509dd5998a3a3, type: 3}
+  - {fileID: 114107677553822186, guid: bea9561e54689f2448af20ef0d1b5130, type: 3}
+  - {fileID: 114313543944479198, guid: 89ef7c387e63ff24e800d00ee47b51b2, type: 3}
   - {fileID: 114355961751498552, guid: fbe9b355dd4e810409312de38efbae6e, type: 3}
   - {fileID: 5503484860487485313, guid: 0586cf25f965f3a4fb8545233fd5f6eb, type: 3}
   vehicleEntities:
@@ -91,7 +91,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4519d6286cf69b142ac9894ff8e06a31, type: 2}
   - {fileID: 11400000, guid: fac1760f3f3d22a47a8e14e34a1d7440, type: 2}
   - {fileID: 11400000, guid: 8c55fb3d3347be747be61f433fb4a843, type: 2}
-  - {fileID: 11400000, guid: b64f816f68b7d6a42b7d3857a4b5d931, type: 2}
+  - {fileID: 11400000, guid: ccd7bf913c6aa3c44b31bef68436a2d1, type: 2}
   - {fileID: 11400000, guid: 0a439d3c316c36f4cae03a253c8839d4, type: 2}
   itemCraftFormulas:
   - {fileID: 11400000, guid: 4fa8022457399b045aa759a2adf444be, type: 2}
@@ -171,7 +171,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1fdbfbd15c3ab674bba487c183dfb99d, type: 2}
   - {fileID: 11400000, guid: 31b3c9ca2358f3748bbacd9bea3ad525, type: 2}
   mapInfos:
-  - {fileID: 11400000, guid: de8b0e4099f8d444692e88f92309e90d, type: 2}
+  - {fileID: 11400000, guid: 679c9ee7c194b00478bbbf1adb7d60f4, type: 2}
   - {fileID: 11400000, guid: fbe2a93dfafee544cbeaf175d3491e33, type: 2}
   - {fileID: 11400000, guid: 7d05446271b4d8f459650ee3e2489a34, type: 2}
   quests:
@@ -183,6 +183,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b098152a1e9a1564bbe41cad1f3baf16, type: 2}
   - {fileID: 11400000, guid: 1b2b3f830f1dac4458bf9a6c347f5248, type: 2}
   - {fileID: 11400000, guid: 150c22002ef3a7d4786355f0cd52ffe4, type: 2}
+  gachas: []
   attributeBundleName: attribute
   currencyBundleName: currency
   damageElementBundleName: damageElement
@@ -192,5 +193,8 @@ MonoBehaviour:
   sceneBundleName: scene
   skillBundleName: skill
   guildSkillBundleName: guildSkill
+  guildIconBundleName: guildIcon
   questBundleName: quest
+  factionBundleName: faction
+  gachaBundleName: gacha
   setNameForUnnamedAssetsOnly: 1
