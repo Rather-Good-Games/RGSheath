@@ -102,6 +102,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -294,6 +295,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -516,6 +518,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -597,6 +600,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -965,6 +969,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -1078,6 +1083,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -1190,6 +1196,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -1302,6 +1309,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -1549,6 +1557,9 @@ MonoBehaviour:
     transform: {fileID: 2068265703915574006}
   - effectSocket: Body
     transform: {fileID: 3127391622226328125}
+  setEffectLayerFollowEntity: 1
+  effectLayer:
+    layerIndex: 0
   setEffectContainersBySetters: 0
   activateObjectsWhenSwitchModel: []
   deactivateObjectsWhenSwitchModel: []
@@ -1639,6 +1650,9 @@ MonoBehaviour:
     defaultModel: {fileID: 3145076482967739088}
     instantiatedObjects: []
     activatingInstantiateObjectIndex: 0
+  setEquipmentLayerFollowEntity: 1
+  equipmentLayer:
+    layerIndex: 0
   setEquipmentContainersBySetters: 0
   deactivateInstantiatedObjects: 0
   activateInstantiatedObject: 0
@@ -3238,6 +3252,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -3584,6 +3599,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -3711,6 +3727,9 @@ MonoBehaviour:
   alwaysVisible: 0
   doNotDestroyWhenDisconnect: 0
   poolingSize: 0
+  onGetInstance:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5084608214364858533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3765,18 +3784,6 @@ MonoBehaviour:
     clientDataChannel: 0
     clientDeliveryMethod: 1
     value: 
-  syncTitleB:
-    behaviour: {fileID: 0}
-    elementId: 0
-    alwaysSync: 0
-    doNotSyncInitialDataImmediately: 0
-    syncMode: 0
-    sendInterval: 0.1
-    dataChannel: 0
-    deliveryMethod: 2
-    clientDataChannel: 0
-    clientDeliveryMethod: 1
-    value: 
   ownerObjects: []
   nonOwnerObjects: []
   model: {fileID: 0}
@@ -3785,17 +3792,6 @@ MonoBehaviour:
   movementSecure: 1
   canSideSprint: 0
   canBackwardSprint: 0
-  direction2D:
-    behaviour: {fileID: 0}
-    elementId: 0
-    alwaysSync: 0
-    doNotSyncInitialDataImmediately: 1
-    syncMode: 0
-    sendInterval: 0.1
-    dataChannel: 0
-    deliveryMethod: 1
-    clientDataChannel: 0
-    clientDeliveryMethod: 1
   passengingVehicle:
     behaviour: {fileID: 0}
     elementId: 0
@@ -4048,7 +4044,6 @@ MonoBehaviour:
     elementId: 0
     dataChannel: 0
     forOwnerOnly: 1
-  gender: {fileID: 0}
   characterDatabases:
   - {fileID: 11400000, guid: 8c31218a0e7c7604ea751e1a56a13a76, type: 2}
   - {fileID: 11400000, guid: f924bc5e901d46141bb3c3ca9b6ef27a, type: 2}
@@ -4267,7 +4262,7 @@ MonoBehaviour:
       - {fileID: 8300000, guid: 2ff7bcc1542eeab48a0f4d5d89a03c9a, type: 3}
     stepDelay: 0.35
     stepThreshold: 0.1
-    randomVolumeMin: 0.15
+    randomVolumeMin: 0.05
     randomVolumeMax: 0.3
     randomPitchMin: 0.75
     randomPitchMax: 1
@@ -4286,7 +4281,7 @@ MonoBehaviour:
       - {fileID: 8300000, guid: 2ff7bcc1542eeab48a0f4d5d89a03c9a, type: 3}
     stepDelay: 0.23
     stepThreshold: 0.1
-    randomVolumeMin: 0.15
+    randomVolumeMin: 0.05
     randomVolumeMax: 0.3
     randomPitchMin: 0.75
     randomPitchMax: 1
@@ -4488,7 +4483,6 @@ MonoBehaviour:
   useRootMotionForFall: 0
   useRootMotionWhileNotMoving: 0
   useRootMotionUnderWater: 0
-  moveThreshold: 0.01
   snapThreshold: 5
   clientSyncTransformInterval: 0.1
   clientSendInputsInterval: 0.05
@@ -4711,6 +4705,9 @@ MonoBehaviour:
     transform: {fileID: 2068265703915574006}
   - effectSocket: Body
     transform: {fileID: 3127391622226328125}
+  setEffectLayerFollowEntity: 1
+  effectLayer:
+    layerIndex: 0
   setEffectContainersBySetters: 0
   activateObjectsWhenSwitchModel: []
   deactivateObjectsWhenSwitchModel: []
@@ -4815,6 +4812,9 @@ MonoBehaviour:
     defaultModel: {fileID: 0}
     instantiatedObjects: []
     activatingInstantiateObjectIndex: 0
+  setEquipmentLayerFollowEntity: 1
+  equipmentLayer:
+    layerIndex: 0
   setEquipmentContainersBySetters: 0
   deactivateInstantiatedObjects: 0
   activateInstantiatedObject: 0
@@ -10645,6 +10645,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -10794,6 +10795,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -10906,6 +10908,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0

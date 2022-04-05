@@ -28,10 +28,8 @@ namespace MultiplayerARPG
 
             playableCharacterModel_ForSheath = GetComponent<PlayableCharacterModel_Custom>();
             pitchIKMgr_RGSheath = GetComponent<PitchIKMgr_RGSheath>();
-            //IsSheathed = GameInstance.Singleton.enableCharacterSelectSheath;
 
             onStart += SheathInit;
-            //onUpdate += SheathOnUpdate;
 
             onSetup += OnSetupSheathChange;
             onSetupNetElements += OnSetupElements;
@@ -79,13 +77,12 @@ namespace MultiplayerARPG
         protected void SheathOnDestroy()
         {
             onStart -= SheathInit;
-            //onUpdate -= SheathOnUpdate;
             onSheathChange -= StartShiethProcess;
         }
 
         protected void SheathInit()
         {
-           
+
             onSheathChange += StartShiethProcess; //Need to init here and not awake doesn't register
         }
 
@@ -123,6 +120,10 @@ namespace MultiplayerARPG
             //If using MMORPG PithIK and PitchIKMgr_RGSheath mod (not required)
             if ((pitchIKMgr_RGSheath != null) && GameInstance.Singleton.disablePitchIKWhenSheathed)
                 pitchIKMgr_RGSheath.UpdatePitchIKBasedOnWeaponDamageType(isSheathed);
+
+            //Need to trigger event? Change 2 Apr 22
+            if (onEquipWeaponSetChange != null)
+                onEquipWeaponSetChange.Invoke(equipWeaponSet);
 
         }
 

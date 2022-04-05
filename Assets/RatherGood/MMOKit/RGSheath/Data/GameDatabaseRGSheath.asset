@@ -13,12 +13,7 @@ MonoBehaviour:
   m_Name: GameDatabaseRGSheath
   m_EditorClassIdentifier: 
   playerCharacterEntities:
-  - {fileID: 114586576023340800, guid: 0f0836d25b5171245a4c66deb284f48d, type: 3}
-  - {fileID: 114191363084881030, guid: c4ba22d80e3951149993cfdfa83d5bbd, type: 3}
   - {fileID: 2788224390015402556, guid: 88407444a0e95b449a85461755915484, type: 3}
-  - {fileID: 374512570995460594, guid: f4d75f6a6e5739b46817549dc6c6b73d, type: 3}
-  - {fileID: 114740533051626506, guid: e4504fbed449d4c4cba6c22bd4953a25, type: 3}
-  - {fileID: 114666491478848388, guid: 545a32703d951094185d08198bc8316d, type: 3}
   monsterCharacterEntities:
   - {fileID: 114107677553822186, guid: bea9561e54689f2448af20ef0d1b5130, type: 3}
   - {fileID: 114313543944479198, guid: 89ef7c387e63ff24e800d00ee47b51b2, type: 3}

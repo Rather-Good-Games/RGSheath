@@ -20,8 +20,6 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
         public bool weaponChangeInProcess = false;
 
-        //TODO: When changing weapons, put old away before switching to new ones.
-        //TODO: Hide/move models between sheath/un-sheath instead of a full destroy, rebuild and re-create
         IEnumerator ShiethProcess(bool isSheathed, EquipWeapons newEquipWeapons)
         {
 
@@ -287,7 +285,9 @@ namespace MultiplayerARPG.GameData.Model.Playables
 
                     tempEquipmentObject.transform.localScale = tempEquipmentModel.localScale.Equals(Vector3.zero) ? Vector3.one : tempEquipmentModel.localScale;
                     tempEquipmentObject.gameObject.SetActive(true);
-                    tempEquipmentObject.gameObject.SetLayerRecursively(CurrentGameInstance.playerLayer.LayerIndex, true);
+                    //Set to current monster OR player layer
+                    tempEquipmentObject.gameObject.SetLayerRecursively(gameObject.layer, true);
+
                     tempEquipmentObject.RemoveComponentsInChildren<Collider>(false);
                     tempEquipmentEntity = tempEquipmentObject.GetComponent<BaseEquipmentEntity>();
                     AddingNewModel(tempEquipmentObject, tempContainer);

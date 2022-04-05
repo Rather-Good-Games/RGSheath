@@ -8,9 +8,11 @@ And Special thanks to https://github.com/Callepo aka Callepo[AlphaAF] for update
 
 **Author:** RatherGood1
 
-**Version**: 0.3
+**Version**: 0.4
 
 This is a working functional demo. Check back often for further change/improvements.
+
+0.4 (4 Apr 22) bug fixes and sync RG MMOKit mods utils folder
 
 0.3 Now with Monser Sheath! See example monsters in the demo to see how to set them up.
 

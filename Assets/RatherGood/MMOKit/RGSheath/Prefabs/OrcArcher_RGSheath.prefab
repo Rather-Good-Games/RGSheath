@@ -2771,7 +2771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56367cc2ed44f1e49835e9c247771fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assetId: 
+  assetId: bea9561e54689f2448af20ef0d1b5130
   objectId: 0
   visibleRange: 0
   alwaysVisible: 0
@@ -8446,6 +8446,9 @@ MonoBehaviour:
   RGDebugStartedFollowEnemy: 0
   isSheithedLocal: 0
   RightHandItem: {fileID: 11400000, guid: 0963afdd208056344a1ea27c592e1d03, type: 2}
+  startItems:
+  - item: {fileID: 11400000, guid: 0df782e70d43dc54d8a6bc2d6a212f89, type: 2}
+    amount: 50
   randomWanderDelayMin: 2
   randomWanderDelayMax: 5
   randomWanderDistance: 2

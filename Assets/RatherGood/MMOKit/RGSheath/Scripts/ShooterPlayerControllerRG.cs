@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace MultiplayerARPG
 {
+
+    //RGSheath mod leace combat mode when sheathed
+
     public partial class ShooterPlayerControllerRG : ShooterPlayerCharacterController
     {
 

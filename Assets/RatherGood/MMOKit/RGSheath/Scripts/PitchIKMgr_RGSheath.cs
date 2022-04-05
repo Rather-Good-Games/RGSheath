@@ -86,7 +86,6 @@ namespace MultiplayerARPG
                     break;
             }
 
-
             characterPitchIK.axis = set.axis;
             characterPitchIK.enableWhileStanding = set.enableWhileStanding;
             characterPitchIK.enableWhileCrouching = set.enableWhileCrouching;

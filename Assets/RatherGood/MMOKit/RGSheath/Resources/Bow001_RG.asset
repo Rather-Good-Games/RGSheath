@@ -77,11 +77,11 @@ MonoBehaviour:
     damageElement: {fileID: 0}
     amount:
       baseAmount:
-        min: 3
-        max: 5
+        min: 5
+        max: 8
       amountIncreaseEachLevel:
-        min: 0.5
-        max: 0.75
+        min: 0
+        max: 0
   harvestDamageAmount:
     baseAmount:
       min: 0
@@ -362,15 +362,7 @@ MonoBehaviour:
   increaseAttributesRate: []
   increaseResistances: []
   increaseArmors: []
-  increaseDamages:
-  - damageElement: {fileID: 11400000, guid: 3afa55aee773f47438e6f7f3a03cd0b9, type: 2}
-    amount:
-      baseAmount:
-        min: 3
-        max: 5
-      amountIncreaseEachLevel:
-        min: 0
-        max: 0
+  increaseDamages: []
   increaseSkillLevels: []
   ammoType: {fileID: 0}
   buildingEntity: {fileID: 0}
